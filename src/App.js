@@ -30,7 +30,7 @@ function App() {
       const scrollTop = window.scrollY;
       const maxScroll = 200; // Adjust this value based on when you want the effect to fully apply
       const blurValue = Math.min(scrollTop / maxScroll, 1) * 10; // Up to 10px blur
-      const opacityValue = Math.min(scrollTop / maxScroll, 1) * 0.8; // Up to 0.8 opacity
+      // const opacityValue = Math.min(scrollTop / maxScroll, 1) * 0.8; // Up to 0.8 opacity
 
       if (headerRef.current) {
         headerRef.current.style.backdropFilter = `blur(${blurValue}px)`;

@@ -1,10 +1,10 @@
 import React, { forwardRef } from 'react';
 import './Header.css';
-import logo from '../assets/daste.-LogoBlack.png';
-import ThemeSelector from './ThemeSelector';
+// import logo from '../assets/daste.-LogoBlack.png';
+// import ThemeSelector from './ThemeSelector';
 
 import dasteLogoOffWhite from '../assets/daste.-LogoOffWhite.png';
-import dasteLogoWhite from '../assets/daste.-LogoWhite.png';
+// import dasteLogoWhite from '../assets/daste.-LogoWhite.png';
 import dasteLogoBlack from '../assets/daste.-LogoBlack.png';
 import dasteLogoOrange from '../assets/daste.-LogoOrange.png';
 

@@ -1,0 +1,62 @@
+/* Footer.css */
+
+.footer {
+    padding: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  .footer a {
+    color: var(--link-color);
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .footer a:hover {
+    color: var(--text-color);
+  }
+  
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 1rem;
+}
+
+.social-links li {
+    list-style: none;
+}
+
+.social-links a {
+    color: var(--link-color); /* Use the theme color */
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.theme-selector-container {
+    display: flex;
+    justify-content: center;
+}
+
+.theme-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.theme-button.orange {
+    background-color: #f05222;
+}
+
+.theme-button.white {
+    background-color: #dcddde;
+}
+
+.theme-button.gray {
+    background-color: #afb8b6;
+}
+

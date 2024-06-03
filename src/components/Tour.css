@@ -1,0 +1,9 @@
+.tour {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+}
+
+.songkick-widget {
+    margin-top: 1rem;
+}

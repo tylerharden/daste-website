@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* padding-top: 100px; Adjust padding for header height */
+    text-align: center;
+}
+
+#band-image {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,20 @@
+.music {
+    padding: 1rem;
+  }
+  
+  .music h1, .music h2 {
+    text-align: center;
+  }
+  
+  .music section {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .music .release-photo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+  

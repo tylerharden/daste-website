@@ -1,38 +1,65 @@
+/* App.css */
+
+@font-face {
+    font-family: 'Helvetica73Extended';
+    src: url('./fonts/Helvetica-73-Extended-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --background-color: #afb8b6;
+    --text-color: black;
+    --link-color: black;
+    --header-height: 60px; /* Default value */
+}
+
+body {
+    font-family: 'Helvetica73Extended', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    
+}
+
 .App {
-  text-align: center;
+    font-family: 'Helvetica73Extended', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    align-items: center;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+    flex: 1;
+    margin-top: var(--header-height); /* Use the CSS variable */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.orange-theme {
+    --background-color: #f05222;
+    --text-color: white;
+    --link-color: #dcddde;
+}
+
+.white-theme {
+    --background-color: #dcddde;
+    --text-color: #f05222;
+    --link-color: #f05222;
+}
+
+.gray-theme {
+    --background-color: #afb8b6;
+    --text-color: black;
+    --link-color: black;
+}
+
+
+.container {
+    width: 100%;
+    /* max-width: var(--max-width); */
+    margin: 0 auto;
+    padding: 0 1rem; /* Optional padding for better spacing */
+    max-width: 812px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

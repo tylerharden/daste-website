@@ -1,0 +1,26 @@
+.theme-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px; /* Space between buttons */
+}
+
+.theme-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.theme-button.orange {
+    background-color: #f05222;
+}
+
+.theme-button.white {
+    background-color: #dcddde;
+}
+
+.theme-button.gray {
+    background-color: #afb8b6;
+}

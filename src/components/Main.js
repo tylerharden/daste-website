@@ -19,7 +19,7 @@ const Main = ({ theme }) => {
 
   return (
     <main className={`main ${theme}`}>
-      <img src={getImageSrc(theme)} alt="daste. band image" id="band-image" />
+      <img src={getImageSrc(theme)} alt="daste. band performing" id="band-image" />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 .music {
-    padding: 1rem;
+    /* padding: 1rem; */
+    width: 100%
   }
   
   .music h1, .music h2 {
@@ -17,4 +18,19 @@
     height: auto;
     margin-top: 1rem;
   }
-  
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    /* padding-top: 100px; Adjust padding for header height */
+    text-align: center;
+    width: 100%
+}
+
+.section {
+  width: 100%
+}

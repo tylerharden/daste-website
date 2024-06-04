@@ -13,43 +13,6 @@ const Tour = ({ theme }) => {
     
   }, []);
 
-  // const getButtonBgColor = (theme) => {
-  //   switch (theme) {
-  //     case 'orange':
-  //       return 'rgb(240, 82, 34, 1)';
-  //     case 'white':
-  //       return 'rgb(220, 221, 222, 1)';
-  //     case 'gray':
-  //     default:
-  //       return 'rgb(175, 184, 182, 1)';
-  //   }
-  // };
-
-  // const getButtonTextColor = (theme) => {
-  //   switch (theme) {
-  //     case 'orange':
-  //     case 'gray':
-  //       return 'rgb(255, 255, 255, 1)';
-  //     case 'white':
-  //       return 'rgb(240, 82, 34, 1)';
-  //     default:
-  //       return 'rgb(0, 0, 0, 1)';
-  //   }
-  // };
-
-  // const getFontColor = (theme) => {
-  //   switch (theme) {
-  //     case 'orange':
-  //     case 'gray':
-  //       return 'rgb(0, 0, 0, 1)';
-  //     case 'white':
-  //       return 'rgb(240, 82, 34, 1)';
-  //     default:
-  //       return 'rgb(0, 0, 0, 1)';
-  //   }
-  // };
-
-
   return (
     <div className="tour">
       <main>

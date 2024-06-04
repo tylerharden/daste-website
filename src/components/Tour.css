@@ -1,10 +1,14 @@
 .tour {
     text-align: center;
-    padding: 2rem;
+    /* padding: 2rem; */
     color: var(--text-color);
-    width:100%
+    width:100%;
+    margin: 2rem 0;
+    vertical-align: top; 
+    
 }
 
 .songkick-widget {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
+    vertical-align: top; 
 }

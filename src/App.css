@@ -1,7 +1,7 @@
 :root {
   --background-color: #afb8b6; /* Default background color */
   --link-color: black; /* Default link color */
-  --max-width: 70%; /* Max width for the content */
+  --max-width: 800px; /* Max width for the content */
   --header-height: 60px; /* Default header height, adjust as needed */
 }
 

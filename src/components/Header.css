@@ -37,6 +37,13 @@
     text-decoration: underline;
 }
 
+/* Adjust font size for smaller devices */
+@media (max-width: 576px) {
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar-nav {
         flex-direction: row;

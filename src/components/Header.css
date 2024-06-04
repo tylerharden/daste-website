@@ -26,7 +26,7 @@
 
 .nav-link {
     color: var(--link-color);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-family: 'Helvetica73Extended', Arial, sans-serif;
     text-decoration: none;
     margin: 0 10px; /* Add margin for spacing */

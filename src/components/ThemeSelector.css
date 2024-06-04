@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2px; /* Space between buttons */
+    gap: 10px; /* Space between buttons */
 }
 
 .theme-button {

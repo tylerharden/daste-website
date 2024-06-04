@@ -22,6 +22,7 @@
     width: 140px; /* Adjust the size of the logo */
     height: auto;
     filter: var(--logo-filter);
+    padding-bottom: 12px;
 }
 
 .nav-link {

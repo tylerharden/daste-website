@@ -26,13 +26,11 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
         <div className="header-container row align-items-center">
           <div className="col-12 col-sm-3 d-flex justify-content-center justify-content-sm-start">
             <a className="navbar-brand" href="/">
-              {/* <img src={logo} alt="daste. band image" id="logo-image" className="logo-overlay img-fluid" /> */}
               <img src={getLogo()} alt="daste. band logo" id="logo-image" className="logo-overlay img-fluid" />
 
             </a>
           </div>
           <div className="col-12 col-md-6 col-sm-3 d-none d-sm-flex justify-content-center">
-            {/* <ThemeSelector changeTheme={changeTheme} /> */}
           </div>
           <div className="col-12 col-md-3 col-sm-6 d-none d-sm-flex justify-content-end">
             <nav>
@@ -47,7 +45,6 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
         </div>
         <div className="row d-sm-none justify-content-center mt-3">
           <div className="col-12 d-flex justify-content-center mt-2">
-            {/* <ThemeSelector changeTheme={changeTheme} /> */}
           </div>
           <div className="col-12 d-flex justify-content-center mt-2">
             <nav>

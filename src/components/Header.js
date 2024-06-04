@@ -23,7 +23,7 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
   return (
     <header className="header" ref={ref}>
       <div >
-        <div className="row align-items-center">
+        <div className="header-container row align-items-center">
           <div className="col-12 col-sm-3 d-flex justify-content-center justify-content-sm-start">
             <a className="navbar-brand" href="/">
               {/* <img src={logo} alt="daste. band image" id="logo-image" className="logo-overlay img-fluid" /> */}

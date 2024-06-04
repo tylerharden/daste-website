@@ -57,9 +57,11 @@ main {
 
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    /* max-width: var(--max-width); */
+    max-width: 812px;
     margin: 0 auto;
     padding: 0 1rem; /* Optional padding for better spacing */
-    max-width: 812px;
-  }
+}

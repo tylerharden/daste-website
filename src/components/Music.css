@@ -2,6 +2,7 @@
 
 .music {
   width: 100%;
+  padding-inline: 15px;
 }
 
 .music h1, .music h2 {

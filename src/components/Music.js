@@ -1,9 +1,12 @@
 import React from 'react';
 import './Music.css';
+import { useLocation } from 'react-router-dom';
 
 const Music = ({ theme, changeTheme }) => {
+  const location = useLocation();
   return (
     <div>
+      {/* {location.pathname === '/' && <h1>Music</h1>} */}
       <main className="music">
         <section>
           {/* <h2>Around (Single)</h2> */}

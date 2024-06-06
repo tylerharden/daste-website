@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+# daste.world
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the official website of daste. 
+This project is a React-based application that includes music, tour, store, and contact pages.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Responsive design for different screen sizes.
+- Theme selector to switch between different color themes.
+- Spotify embeds for music releases.
+- Contact form and social media links.
+- Songkick widget for tour dates.
+- Dynamic header with logo and navigation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To run this project locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/daste.world.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd daste.world
+   ```
+3. Install the dependencies:
+   ```sh
+   npm install
+   ```
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To start the development server, run:
+```sh
+npm start
+```
+This will launch the application in your default web browser at `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## File Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The project structure is as follows:
 
-### `npm run eject`
+```
+daste.world/
+├── public/
+│   ├── assets/
+│   │   ├── daste.-LogoBlack.png
+│   │   ├── daste.-LogoOffWhite.png
+│   │   ├── daste.-LogoOrange.png
+│   │   └── other assets...
+│   ├── fonts/
+│   │   └── Helvetica-73-Extended-Bold.ttf
+│   ├── index.html
+│   └── other public files...
+├── src/
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   ├── Main.js
+│   │   ├── Tour.js
+│   │   ├── Music.js
+│   │   ├── Contact.js
+│   │   ├── ThemeSelector.js
+│   │   └── other components...
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   ├── styles.css
+│   └── other source files...
+├── package.json
+└── README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions are welcome! Please follow these steps to contribute:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Fork the repository.
+2. Create a new branch:
+   ```sh
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes and commit them:
+   ```sh
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```sh
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For any inquiries, please contact us at [thatdasteband@gmail.com](mailto:thatdasteband@gmail.com).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Follow us on social media:
+- [Spotify](https://open.spotify.com/artist/5uXWOfu1kA8mQ9bUp5GgxT)
+- [Instagram](https://instagram.com/daste.music)
+- [TikTok](https://tiktok.com/@daste.music)
+- [Facebook](https://www.facebook.com/daste.music)
+- [Twitter](https://x.com/dasteband)
+- [YouTube](https://www.youtube.com/channel/UCOvwkCtPWz9rDC4rcNf303w)
+- [SoundCloud](https://soundcloud.com/daste-music)
+- [Bandcamp](https://daste.bandcamp.com/)

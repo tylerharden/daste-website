@@ -8,12 +8,12 @@
 .header {
     position: fixed;
     top: 0;
-    /* width: 100%; */
+    width: 100%;
     z-index: 1000;
-    /* background-color: var(--background-color); */
+    background-color: var(--background-color);
     /* padding: 1rem 0; */
     padding-inline: 40px;
-    padding-top: 32px;
+    padding-top: 36px;
     /* padding-bottom: 32px; */
     font-family: 'Helvetica73Extended', Arial, sans-serif;
 }
@@ -22,7 +22,7 @@
     width: 140px; /* Adjust the size of the logo */
     height: auto;
     filter: var(--logo-filter);
-    padding-bottom: 12px;
+    /* padding-bottom: 12px; */
 }
 
 .nav-link {
@@ -53,5 +53,6 @@
 
     .theme-buttons {
         margin-bottom: 1rem;
+        
     }
 }

@@ -3,7 +3,7 @@ import './Music.css';
 
 const Music = ({ theme, changeTheme }) => {
   return (
-    <div className="container">
+    <div>
       <main className="music">
         <section>
           {/* <h2>Around (Single)</h2> */}

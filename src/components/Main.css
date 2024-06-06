@@ -1,17 +1,20 @@
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center;
-    flex: 1;
-    padding-top: var(--header-height); /* Adjust padding for header height */
-    text-align: center;
-    /* background-color: red; */
-  }
-  
-  #band-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 0; /* Ensure there is no margin at the top */
-  }
-  
+/* Main.css */
+
+#band-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-top: 15px
+}
+
+.main-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  scroll-snap-align: start;
+  width: 100%;
+}

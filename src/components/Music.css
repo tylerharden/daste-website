@@ -1,36 +1,21 @@
+/* Music.css */
+
 .music {
-    /* padding: 1rem; */
-    width: 100%
-  }
-  
-  .music h1, .music h2 {
-    text-align: center;
-  }
-  
-  .music section {
-    margin: 2rem 0;
-    text-align: center;
-  }
-  
-  .music .release-photo {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    margin-top: 1rem;
-  }
-
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    /* padding-top: 100px; Adjust padding for header height */
-    text-align: center;
-    width: 100%
+  width: 100%;
 }
 
-.section {
-  width: 100%
+.music h1, .music h2 {
+  text-align: center;
+}
+
+.music section {
+  /* margin: 2rem 0; */
+  text-align: center;
+}
+
+.music .release-photo {
+  /* max-width: 300px; */
+  /* width: 100%; */
+  height: auto;
+  /* margin-top: 1rem; */
 }

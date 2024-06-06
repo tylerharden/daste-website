@@ -1,8 +1,9 @@
 .theme-buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     gap: 10px; /* Space between buttons */
+    margin-bottom: 2rem;
 }
 
 .theme-button {
@@ -24,3 +25,10 @@
 .theme-button.gray {
     background-color: #afb8b6;
 }
+.theme-selector {
+    display: flex;
+    gap: 10px;
+    z-index: 1020; /* Ensure it is above other content */
+    position: relative;
+  }
+  

@@ -1,10 +1,13 @@
 import React from 'react';
 import './Main.css';
+import Tour from './Tour';
+import Music from './Music';
+import './Main.css';
 import imageGrey from '../assets/daste-atlas-image-grey.png';
 import imageOrange from '../assets/daste-atlas-image-orange.png';
 import imageWhite from '../assets/daste-atlas-image-white.png';
 
-const Main = ({ theme }) => {
+const Main = ({ theme, changeTheme }) => {
   const getImageSrc = (theme) => {
     switch (theme) {
       case 'orange':
@@ -19,7 +22,15 @@ const Main = ({ theme }) => {
 
   return (
     <main className={`main ${theme}`}>
-      <img src={getImageSrc(theme)} alt="daste. band performing" id="band-image" />
+      <section className="section">
+        <img src={getImageSrc(theme)} alt="daste. band" id="band-image" />
+      </section>
+      <section className="section">
+        <Tour theme={theme} changeTheme={changeTheme} />
+      </section>
+      <section className="section">
+        <Music theme={theme} changeTheme={changeTheme} />
+      </section>
     </main>
   );
 }

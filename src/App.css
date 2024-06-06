@@ -1,14 +1,9 @@
 :root {
-  --background-color: #afb8b6; /* Default background color */
-  --link-color: black; /* Default link color */
-  --max-width: 800px; /* Max width for the content */
-  --header-height: 60px; /* Default header height, adjust as needed */
-}
-
-body, html, .App {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  --background-color: #afb8b6;
+  --link-color: black;
+  --max-width: 800px;
+  --header-height: 60px;
+  --main-padding-top: 20px; /* Default padding for main content */
 }
 
 .App {
@@ -22,20 +17,13 @@ body, html, .App {
 .container {
   width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem; /* Optional padding for better spacing */
+  margin-top: var(--header-height);
+  /* padding: 0 1rem; */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
-main {
-  flex: 1;
-  padding-top: var(--header-height); /* Adjust padding to account for header height */
-  padding-bottom: 20px; /* Optional: Add some padding to the bottom */
-}
 
-footer {
-  padding: 1rem;
-}
-
-.header {
-  background-color: var(--header-bg-color); /* Use dynamic background color with transparency */
+.main-content {
+  /* padding-top: var(--main-padding-top); */
+  flex: 1; /* Ensures the main content takes up the remaining space */
 }

@@ -39,3 +39,15 @@
     z-index: 1010; /* Ensure it is above other content */
   }
   
+    @media (min-width: 992px) {
+    .social-links li {
+      display: none;
+    }
+  
+    .social-links .spotify,
+    .social-links .tiktok,
+    .social-links .instagram,
+    .social-links .facebook {
+      display: none;
+    }
+  }

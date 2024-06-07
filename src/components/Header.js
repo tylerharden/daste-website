@@ -20,7 +20,7 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
   return (
     <header className="header" ref={ref}>
       <div className="header-container">
-        <div className="row align-items-center">
+        <div className="row align-items-center d-lg-none">
           <div className="col-12 col-sm-3 d-flex justify-content-center justify-content-sm-start">
             <a className="navbar-brand" href="/">
               <img src={getLogo()} alt="daste. band logo" id="logo-image" className="logo-overlay img-fluid" />
@@ -36,6 +36,31 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
                 <li className="nav-item"><a className="nav-link" href="/contact">CONTACT</a></li>
               </ul>
             </nav>
+          </div>
+        </div>
+        <div className="row d-lg-flex d-none align-items-center justify-content-between">
+          <div className="col-4">
+            <nav>
+              <ul className="navbar-nav flex-row">
+                <li className="nav-item"><a className="nav-link" href="/tour">TOUR</a></li>
+                <li className="nav-item"><a className="nav-link" href="/music">MUSIC</a></li>
+                <li className="nav-item"><a className="nav-link" href="https://daste-store.myshopify.com" target="_blank" rel="noopener noreferrer">STORE</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div className="col-4 d-flex justify-content-center">
+            <a className="navbar-brand" href="/">
+              <img src={getLogo()} alt="daste. band logo" id="logo-image" className="logo-overlay img-fluid" />
+            </a>
+          </div>
+          <div className="col-4 d-flex justify-content-end">
+            <ul className="navbar-nav flex-row">
+              <li className="nav-item"><a className="nav-link" href="https://open.spotify.com/artist/5uXWOfu1kA8mQ9bUp5GgxT" target="_blank" rel="noopener noreferrer"><i className="fab fa-spotify"></i></a></li>
+              <li className="nav-item"><a className="nav-link" href="https://instagram.com/daste.music" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
+              <li className="nav-item"><a className="nav-link" href="https://tiktok.com/@daste.music" target="_blank" rel="noopener noreferrer"><i className="fab fa-tiktok"></i></a></li>
+              <li className="nav-item"><a className="nav-link" href="https://www.facebook.com/daste.music" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a></li>
+              <li className="nav-item"><a className="nav-link" href="/contact">CONTACT</a></li>
+            </ul>
           </div>
         </div>
         <div className="row d-sm-none justify-content-center mt-3">

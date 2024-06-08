@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Main from './components/Main';
-import Tour from './components/Tour';
-import Music from './components/Music';
-import Contact from './components/Contact';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
+import News from './components/News/News';
+import Main from './components/Main/Main';
+import Tour from './components/Tour/Tour';
+import Music from './components/Music/Music';
+import Contact from './components/Contact/Contact';
 
 function AppContent({ theme, changeTheme }) {
 
@@ -14,6 +15,7 @@ function AppContent({ theme, changeTheme }) {
     <div className={`App ${theme}-theme`}>
           <Routes>
             <Route path="/" element={<Main theme={theme} changeTheme={changeTheme} />} />
+            <Route path="/news" element={<News />} /> 
             <Route path="/tour" element={<Tour theme={theme} changeTheme={changeTheme} />} />
             <Route path="/music" element={<Music theme={theme} changeTheme={changeTheme} />} />
             <Route path="/contact" element={<Contact theme={theme} changeTheme={changeTheme} />} />

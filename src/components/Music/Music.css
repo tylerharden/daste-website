@@ -1,0 +1,30 @@
+/* Music.css */
+
+.music {
+  width: 100%;
+}
+
+.music h1, .music h2 {
+  text-align: center;
+}
+
+.music section {
+  /* margin: 2rem 0; */
+  text-align: center;
+}
+
+.music .release-photo {
+  /* max-width: 300px; */
+  /* width: 100%; */
+  height: auto;
+  /* margin-top: 1rem; */
+}
+
+.music-container {
+  padding: 20px;
+}
+
+.spotify-embed {
+  margin: 0 auto;
+  /* max-width: 800px; */
+}

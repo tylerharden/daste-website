@@ -1,0 +1,31 @@
+/* Main.css */
+
+#band-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.image {
+  padding-top: 15px;
+  height: 80vh;
+}
+
+.main-container {
+  height: 100vh;
+  /* overflow-y: scroll; */
+  /* scroll-snap-type: y mandatory; */
+}
+
+.section {
+  /* scroll-snap-align: start; */
+  width: 100%;
+}
+
+.sections {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}

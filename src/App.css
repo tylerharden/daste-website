@@ -1,8 +1,9 @@
 :root {
   --background-color: #afb8b6;
   --link-color: black;
-  --max-width: 800px;
+  --max-width: 1000px;
   --header-height: 60px;
+  --footer-height: 40px;
   --main-padding-top: 20px;
 }
 
@@ -17,12 +18,18 @@
 .container {
   width: 100%;
   max-width: var(--max-width);
-  margin-top: var(--header-height);
+  padding-top: var(--header-height);
+  padding-bottom: var(--footer-height);
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   box-sizing: border-box;
+  overflow-y: auto; /* Ensure the container can scroll if needed */
+  
 }
 
 .main-content {
   flex: 1;
+  padding-inline: 15px;
+  /* max-height: 100px; */
 }
 
 .footer {

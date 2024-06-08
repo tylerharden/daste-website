@@ -1,6 +1,8 @@
+/* Header.css */
+
 @font-face {
   font-family: 'Helvetica73Extended';
-  src: url('../fonts/Helvetica-73-Extended-Bold.ttf') format('truetype');
+  src: url('../fonts/helvetica-73-extended-bold-1361522149.ttf') format('truetype');
 }
 
 .header {

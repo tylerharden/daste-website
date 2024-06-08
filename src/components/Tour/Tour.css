@@ -1,0 +1,83 @@
+.tour-container {
+    /* padding-inline: 20px 0; */
+    /* padding-inline: 15px; */
+}
+
+.country-group h2 {
+    font-size: 2rem;
+    /* float:left; */
+}
+
+.event-title {
+    font-weight: bold;
+}
+
+.event-venue {
+    font-style: italic;
+}
+
+.event-city {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.tour-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.tour-item p {
+    margin-bottom: 0.5rem;
+}
+
+.ticket-button {
+    background-color: #f05222;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    /* border-radius: 12px;
+    border: 2px solid white;
+    cursor: pointer; */
+}
+
+.ticket-button-secondary {
+    background-color: #f05222;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    /* border-radius: 12px;
+    border: 2px solid white;
+    cursor: pointer; */
+}
+
+
+@media (max-width: 767.98px) {
+    .tour-item-mobile {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .tour-item-mobile .left {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+    }
+
+    .tour-item-mobile .right {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+    }
+
+    .tour-item-mobile .right .btn {
+        width: 100%;
+    }
+}

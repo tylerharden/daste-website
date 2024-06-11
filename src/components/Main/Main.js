@@ -4,7 +4,7 @@ import imageGrey from '../../assets/daste-atlas-image-grey.png';
 import imageOrange from '../../assets/daste-atlas-image-orange.png';
 import imageWhite from '../../assets/daste-atlas-image-white.png';
 // import News from '../News/News';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
+// import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Main = ({ theme, changeTheme }) => {
   // const { width } = useWindowDimensions();

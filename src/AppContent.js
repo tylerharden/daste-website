@@ -15,7 +15,7 @@ function AppContent({ theme, changeTheme }) {
     <div className={`App ${theme}-theme`}>
           <Routes>
             <Route path="/" element={<Main theme={theme} changeTheme={changeTheme} />} />
-            <Route path="/news" element={<News />} /> 
+            <Route path="/news" element={<News theme={theme} changeTheme={changeTheme} />} /> 
             <Route path="/tour" element={<Tour theme={theme} changeTheme={changeTheme} />} />
             <Route path="/music" element={<Music theme={theme} changeTheme={changeTheme} />} />
             <Route path="/contact" element={<Contact theme={theme} changeTheme={changeTheme} />} />

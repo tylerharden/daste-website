@@ -1,31 +1,83 @@
-/* Main.css */
+:root {
+  --text-color: black;
+  --button-color: #f05222;
+  --button-text-color: white; 
+  --border-color: #ddd;
+}
+
+body.orange-theme {
+  --text-color: white;
+  --button-color: #ddd;
+  --button-text-color: #f05222; 
+  --border-color: #ddd;
+}
+
+body.white-theme {
+  --text-color: #f05222;
+  --button-color: #f05222;
+  --button-text-color: white; 
+  --border-color: #f05222;
+}
+
+body.gray-theme {
+  --text-color: black;
+  --button-color: #f05222;
+  --button-text-color: white; 
+  --border-color: grey;
+}
 
 #band-image {
-  max-width: 100%;
-  height: auto;
+  padding-top: 15px;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - var(--header-height) - var(--footer-height));
+  object-fit: cover;
   display: block;
   margin: 0 auto;
-  
 }
 
 .image {
-  padding-top: 15px;
-  /* height: 80vh; */
+  position: relative;
+  min-height: calc(80vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-container {
   height: 100vh;
-  /* overflow-y: scroll; */
-  /* scroll-snap-type: y mandatory; */
 }
 
 .section {
-  /* scroll-snap-align: start; */
   width: 100%;
 }
 
 .sections {
-  /* height: 100vh; */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
+
+.main-button { 
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-link {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  /* border-radius: 4px; */
+  /* transition: background-color 0.3s ease; */
+  font-size: 1.4rem;
+  font-family: 'Helvetica73-Extended', Arial, sans-serif;
+}
+
+.main-link:hover {
+  /* background-color: darken(var(--button-color), 10%); */
+}
+

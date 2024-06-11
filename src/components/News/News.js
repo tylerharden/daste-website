@@ -15,14 +15,15 @@ const NewsItem = ({ photo, title, description, link, linkButtonTitle }) => (
   <div className="news-item">
     <div className="news-content">
       <h2 className="news-title">{title}</h2>
+      <div className="news-photo-container">
+      <img src={imageMap[photo]} alt={title} className="news-photo" />
+    </div>
       <p className="news-description">{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer" className="news-link">
         {linkButtonTitle}
       </a>
     </div>
-    <div className="news-photo-container">
-      <img src={imageMap[photo]} alt={title} className="news-photo" />
-    </div>
+    
   </div>
 );
 
@@ -44,8 +45,8 @@ const News = () => {
           <NewsItem
             key={index}
             photo={item.photo}
-            title={item.title}
-            description={item.description}
+            // title={item.title}
+            // description={item.description}
             link={item.link}
             linkButtonTitle={item.linkButtonTitle}
           />

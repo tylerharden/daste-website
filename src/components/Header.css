@@ -1,9 +1,29 @@
 /* Header.css */
 
 @font-face {
-  font-family: 'Helvetica73Extended';
-  src: url('../fonts/helvetica-73-extended-bold-1361522149.ttf') format('truetype');
+  font-family: 'Helvetica73-Extended';
+  src: url('../fonts/Helvetica73-ExtendedBold.eot');
+  src: url('../fonts/Helvetica73-ExtendedBold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Helvetica73-ExtendedBold.woff2') format('woff2'),
+      url('../fonts/Helvetica73-ExtendedBold.woff') format('woff'),
+      url('../fonts/Helvetica73-ExtendedBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'Favorit';
+  src: url('../fonts/Favorit-Medium.eot');
+  src: url('../fonts/Favorit-Medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Favorit-Medium.woff2') format('woff2'),
+      url('../fonts/Favorit-Medium.woff') format('woff'),
+      url('../fonts/Favorit-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 .header {
   position: fixed;
@@ -13,14 +33,14 @@
   background-color: var(--background-color);
   padding-inline: 40px;
   padding-top: 36px;
-  font-family: 'Helvetica73Extended', Arial, sans-serif;
+  font-family: 'Favorit', Arial, sans-serif;
 }
 
 .header-container {
-  width: 100%; /* Ensure the header container spans the full width */
-  margin: 0 auto; /* Center align the header container */
-  padding: 0 1rem; /* Add padding to match the main container */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
+  width: 100%; 
+  margin: 0 auto;
+  /* padding: 0 1rem; */
+  box-sizing: border-box;
 }
 
 #logo-image {
@@ -32,7 +52,7 @@
 .nav-link {
   color: var(--link-color);
   font-size: 1.2rem;
-  font-family: 'Helvetica73Extended', Arial, sans-serif;
+  font-family: 'Helvetica73-Extended', Arial, sans-serif;
   text-decoration: none;
   margin: 0 10px;
 }

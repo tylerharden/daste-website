@@ -11,12 +11,15 @@ const Contact = ({ theme, changeTheme }) => {
       </ul>
       <h2>Send us a message</h2>
       <form action="mailto:thatdasteaband@gmail.com" method="post" enctype="text/plain">
-        <label htmlFor="name">Name:</label><br />
-        <input type="text" id="name" name="name" /><br />
-        <label htmlFor="email">Email:</label><br />
-        <input type="email" id="email" name="email" /><br />
-        <label htmlFor="message">Message:</label><br />
-        <textarea id="message" name="message"></textarea><br />
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        
+        <label htmlFor="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
         <input type="submit" value="Send" />
       </form>
     </main>

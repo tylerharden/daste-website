@@ -18,8 +18,8 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
   };
 
   return (
+    <div className="header-container">
     <header className="header" ref={ref}>
-      <div className="header-container">
         <div className="row align-items-center d-lg-none">
           <div className="col-12 col-sm-3 d-flex justify-content-center justify-content-sm-start">
             <a className="navbar-brand" href="/">
@@ -76,8 +76,8 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
             </nav>
           </div>
         </div>
-      </div>
     </header>
+    </div>
   );
 });
 

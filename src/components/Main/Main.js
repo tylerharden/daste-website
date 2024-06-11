@@ -1,15 +1,14 @@
 import React from 'react';
 import './Main.css';
-import Tour from '../Tour/Tour';
-import Music from '../Music/Music';
-// import Bandsintown from './Bandsintown';
-import './Main.css';
 import imageGrey from '../../assets/daste-atlas-image-grey.png';
 import imageOrange from '../../assets/daste-atlas-image-orange.png';
 import imageWhite from '../../assets/daste-atlas-image-white.png';
 import News from '../News/News';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Main = ({ theme, changeTheme }) => {
+  const { width } = useWindowDimensions();
+
   const getImageSrc = (theme) => {
     switch (theme) {
       case 'orange':
@@ -25,21 +24,20 @@ const Main = ({ theme, changeTheme }) => {
   return (
     <main className={`main ${theme}`}>
       <div className='sections'>
-        {/* <section className="section image">
-          <img src={getImageSrc(theme)} alt="daste. band" id="band-image" />
-        </section> */}
-        <section className="section">
-          <News theme={theme} changeTheme={changeTheme} />
-        </section>
-
-        {/* <Bandsintown /> */}
-        <section className="section">
-          {/* <h1>Tour</h1> */}
-          <Tour theme={theme} changeTheme={changeTheme} />
-        </section>
-        <section className="section">
-          <Music theme={theme} changeTheme={changeTheme} />
-        </section>
+        {width <= 550 ? (
+          <section className="section image">
+            <News />
+          </section>
+        ) : (
+          <section className="section image">
+            <img src={getImageSrc(theme)} href={'/tour'} alt="daste. band" id="band-image" />
+            <div className="main-button">
+              <a href={'/tour'} target="_blank" rel="noopener noreferrer" className="main-link">
+                Atlas Tour
+              </a>
+            </div>
+          </section>
+        )}
       </div>
     </main>
   );

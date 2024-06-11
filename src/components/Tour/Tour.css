@@ -3,104 +3,106 @@
     --button-color: #f05222;
     --button-text-color: white; 
     --border-color: #ddd;
-  }
+}
   
-  
-  body.orange-theme {
+body.orange-theme {
     --text-color: white;
     --button-color: white;
     --button-text-color: #f05222; 
     --border-color: #ddd;
-  }
+}
   
-  body.white-theme {
+body.white-theme {
     --text-color: #f05222;
     --button-color: #f05222;
     --button-text-color: white; 
     --border-color: #f05222;
-  }
+}
   
-  body.gray-theme {
+body.gray-theme {
     --text-color: black;
     --button-color: #f05222;
     --button-text-color: white; 
     --border-color: grey;
-  }
+}
   
-  .tour-container {
-    /* padding-inline: 20px 0; */
-    /* padding-inline: 15px; */
+.tour-container {
+    padding-top: 15px;
     justify-content: space-between;
-  }
+}
   
-  .country-group h2 {
+.country-group h2 {
+    padding-top: 15px;
     font-size: 2rem;
-  }
+    font-family: 'Favorit', Arial, sans-serif;
+}
   
-  .event-title {
+.event-title {
     font-weight: bold;
-  }
+}
   
-  .event-venue {
+.event-venue {
     font-style: italic;
-  }
+}
   
-  .event-city {
+.event-city {
     font-weight: bold;
     font-size: 1.2rem;
-  }
+}
   
-  .tour-item {
+.tour-item {
     padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
-  }
+}
   
-  .tour-item p {
+.tour-item p {
     margin-bottom: 0.5rem;
-  }
+}
   
-  .ticket-button,
-  .ticket-button-secondary {
+.ticket-button,
+.ticket-button-secondary {
     background-color: var(--button-color);
     color: var(--button-text-color);
     border: none;
     padding: 15px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    /* transition: background-color 0.3s; */
-  }
+    /* max-height: 40px; */
+    font-family: 'Favorit', Arial, sans-serif;
+
+}
   
-  .ticket-button:hover,
-  .ticket-button-secondary:hover {
+.ticket-button:hover,
+.ticket-button-secondary:hover {
     text-decoration: underline;
-  }
+}
   
-  @media (max-width: 767.98px) {
+@media (max-width: 767.98px) {
     .tour-item-mobile {
-      display: flex;
-      padding-bottom: 15px;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border-color);
-      width: 100%;
+        display: flex;
+        padding-bottom: 15px;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
     }
   
     .tour-item-mobile .left {
-      display: flex;
-      flex-direction: column;
-      width: 55%;
+        display: flex;
+        flex-direction: column;
+        width: 55%;
     }
   
     .tour-item-mobile .right {
-      display: flex; 
-      flex-direction: column;
-      width: 45%;
-      margin-right: -25px;
-      /* background-color: red; */
+        display: flex; 
+        flex-direction: column;
+        width: 45%;
+        margin-right: -25px;
     }
   
     .tour-item-mobile .right .btn {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
+}

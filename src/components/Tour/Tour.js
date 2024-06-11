@@ -60,7 +60,8 @@ const Tour = ({ theme }) => {
     <div className="tour-container">
       {Object.keys(groupedByCountry).map((country, index) => (
         <div key={index} className="country-group mb-5">
-          <SectionHeader leftHeading="Tour" rightHeading={country}></SectionHeader>
+          {/* <SectionHeader leftHeading="Tour" rightHeading={country}></SectionHeader> */}
+          <h2 className=''>{country}</h2>
           {groupedByCountry[country].map((item, idx) => (
             <TourItem className='tour-item'
               key={idx}

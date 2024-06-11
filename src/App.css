@@ -2,6 +2,7 @@
   --background-color: #afb8b6;
   --link-color: black;
   --max-width: 1000px;
+  /* --min-width: 500px; */
   --header-height: 60px;
   --footer-height: 40px;
   --main-padding-top: 20px;
@@ -10,47 +11,34 @@
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-color: var(--background-color);
   color: var(--link-color);
 }
 
 .container {
   width: 100%;
-  max-width: var(--max-width);
-  padding-top: var(--header-height);
-  padding-bottom: var(--footer-height);
+  /* max-width: var(--max-width); */
+  min-width: 100%;
+  margin-top: var(--header-height);
+  margin-bottom: var(--footer-height);
   height: calc(100vh - var(--header-height) - var(--footer-height));
   box-sizing: border-box;
-  overflow-y: auto; /* Ensure the container can scroll if needed */
+  overflow-y: auto;
   
 }
 
 .main-content {
-  flex: 1;
+  /* flex: 1; */
   padding-inline: 30px;
   /* max-height: 100px; */
+  /* max-width: var(--max-width); */
 }
 
-.footer {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.header {
+  padding-inline: 30px;
 }
 
-.footer.sticky-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
 
 .social-links {
   margin: 1rem 0;

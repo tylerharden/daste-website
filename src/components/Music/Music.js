@@ -1,6 +1,6 @@
 import React from 'react';
 import './Music.css';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import SpotifyEmbed from './SpotifyEmbed';
 
 const Music = ({ theme, changeTheme }) => {

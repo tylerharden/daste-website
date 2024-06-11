@@ -46,13 +46,12 @@ body.gray-theme {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  /* height: 80vh; */
 
 }
 
 .news-photo {
-  max-width: 100%;
-  max-height: 47vh;
+  max-width: 120%;
   object-fit: contain; /* Ensure the image is fully visible */
   border: 1px solid #dcddde;
   cursor: pointer;

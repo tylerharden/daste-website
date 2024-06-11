@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import SpotifyEmbed from './SpotifyEmbed';
 
 const Music = ({ theme, changeTheme }) => {
-  const location = useLocation();
+  // const location = useLocation();
   return (
     <div className='music'>
       <SpotifyEmbed artistId={'5uXWOfu1kA8mQ9bUp5GgxT'}/>

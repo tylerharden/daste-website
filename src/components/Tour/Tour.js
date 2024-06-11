@@ -2,7 +2,7 @@ import React from 'react';
 import './Tour.css';
 import tourData from '../../data/tourData';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SectionHeader from '../SectionHeader';
+// import SectionHeader from '../SectionHeader';
 
 const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName }) => (
   <>

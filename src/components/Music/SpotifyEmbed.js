@@ -7,6 +7,7 @@ const SpotifyEmbed = ({ artistId }) => {
     <div className="spotify-embed">
       <iframe
         src={embedUrl}
+        title="daste. Spotify"
         width="100%"
         height="100%"
         frameBorder="0"

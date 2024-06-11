@@ -16,6 +16,8 @@ function AppWrapper() {
     const bgColor = newTheme === 'orange' ? '#f05222' : newTheme === 'white' ? '#dcddde' : '#afb8b6';
     document.documentElement.style.setProperty('--background-color', bgColor);
     document.documentElement.style.setProperty('--link-color', newTheme === 'orange' ? 'white' : newTheme === 'white' ? '#f05222' : 'black');
+    document.body.classList.remove('orange-theme', 'white-theme', 'gray-theme');
+    document.body.classList.add(`${newTheme}-theme`);
   };
 
   useEffect(() => {

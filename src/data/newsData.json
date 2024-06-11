@@ -3,7 +3,7 @@
         "photo": "image1",
         "title": "Atlas Tour",
         "description": "So excited to be touring again. Get tickets below!",
-        "link": "https://i0.wp.com/www.faetonmusic.com/wp-content/uploads/2019/11/daste.-artist-faeton-music.jpg?fit=500%2C500&ssl=1",
+        "link": "/tour",
         "selectedToDisplay": true,
         "orderInt": 0,
         "linkButtonTitle": "Tickets"

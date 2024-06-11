@@ -2,6 +2,7 @@ import React from 'react';
 import './Tour.css';
 import tourData from '../../data/tourData';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SectionHeader from '../SectionHeader';
 
 const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName }) => (
   <>
@@ -47,7 +48,7 @@ const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName 
   </>
 );
 
-const Tour = () => {
+const Tour = ({ theme }) => {
   // Group the tour data by country
   const groupedByCountry = tourData.reduce((acc, tour) => {
     acc[tour.country] = acc[tour.country] || [];
@@ -59,9 +60,9 @@ const Tour = () => {
     <div className="tour-container">
       {Object.keys(groupedByCountry).map((country, index) => (
         <div key={index} className="country-group mb-5">
-          <h2 className="text-center mb-4">{country}</h2>
+          <SectionHeader leftHeading="Tour" rightHeading={country}></SectionHeader>
           {groupedByCountry[country].map((item, idx) => (
-            <TourItem
+            <TourItem className='tour-item'
               key={idx}
               date={item.date}
               day={item.day}

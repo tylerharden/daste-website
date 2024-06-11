@@ -25,15 +25,16 @@ const Main = ({ theme, changeTheme }) => {
   return (
     <main className={`main ${theme}`}>
       <div className='sections'>
-        <section className="section image">
+        {/* <section className="section image">
           <img src={getImageSrc(theme)} alt="daste. band" id="band-image" />
-        </section>
+        </section> */}
         <section className="section">
           <News theme={theme} changeTheme={changeTheme} />
         </section>
 
         {/* <Bandsintown /> */}
         <section className="section">
+          {/* <h1>Tour</h1> */}
           <Tour theme={theme} changeTheme={changeTheme} />
         </section>
         <section className="section">

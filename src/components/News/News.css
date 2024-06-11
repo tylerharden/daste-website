@@ -23,7 +23,7 @@ body.white-theme {
 body.gray-theme {
   --text-color: black;
   --button-color: #f05222;
-  --button-text-color: white; 
+  --button-text-color: black; 
   --border-color: grey;
 }
 
@@ -35,7 +35,7 @@ body.gray-theme {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin-bottom: 140px;
   overflow: hidden;
   
 }
@@ -53,7 +53,7 @@ body.gray-theme {
 .news-photo {
   max-width: 120%;
   object-fit: contain; /* Ensure the image is fully visible */
-  border: 1px solid #dcddde;
+  /* border: 1px solid #dcddde; */
   cursor: pointer;
   
 }

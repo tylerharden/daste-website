@@ -3,11 +3,11 @@ import './Main.css';
 import imageGrey from '../../assets/daste-atlas-image-grey.png';
 import imageOrange from '../../assets/daste-atlas-image-orange.png';
 import imageWhite from '../../assets/daste-atlas-image-white.png';
-import News from '../News/News';
+// import News from '../News/News';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 const Main = ({ theme, changeTheme }) => {
-  const { width } = useWindowDimensions();
+  // const { width } = useWindowDimensions();
 
   const getImageSrc = (theme) => {
     switch (theme) {
@@ -24,11 +24,11 @@ const Main = ({ theme, changeTheme }) => {
   return (
     <main className={`main ${theme}`}>
       <div className='sections'>
-        {width <= 550 ? (
-          <section className="section image">
+        {/* {width <= 550 ? ( */}
+          {/* <section className="section image">
             <News />
-          </section>
-        ) : (
+          </section> */}
+        {/* ) : ( */}
           <section className="section image">
             <img src={getImageSrc(theme)} href={'/tour'} alt="daste. band" id="band-image" />
             <div className="main-button">
@@ -37,7 +37,7 @@ const Main = ({ theme, changeTheme }) => {
               </a>
             </div>
           </section>
-        )}
+        {/* )} */}
       </div>
     </main>
   );

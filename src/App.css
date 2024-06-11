@@ -55,9 +55,8 @@
   text-decoration: none;
 }
 
-.theme-selector-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  z-index: 1010;
+@media (max-width: 767.98px) {
+  .main-content {
+    padding-inline: 5px;
+  }
 }

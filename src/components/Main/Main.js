@@ -1,8 +1,8 @@
 import React from 'react';
 import './Main.css';
-import imageGrey from '../../assets/daste-atlas-image-grey.png';
-import imageOrange from '../../assets/daste-atlas-image-orange.png';
-import imageWhite from '../../assets/daste-atlas-image-white.png';
+import imageGrey from '../../assets/daste-atlas-grey.jpg';
+import imageOrange from '../../assets/daste-atlas-orange.jpg';
+import imageWhite from '../../assets/daste-atlas-white.jpg';
 // import News from '../News/News';
 // import useWindowDimensions from '../../hooks/useWindowDimensions';
 
@@ -32,9 +32,9 @@ const Main = ({ theme, changeTheme }) => {
           <section className="section image">
             <img src={getImageSrc(theme)} href={'/tour'} alt="daste. band" id="band-image" />
             <div className="main-button">
-              <a href={'/tour'} target="_blank" rel="noopener noreferrer" className="main-link">
+              {/* <a href={'/tour'} target="_blank" rel="noopener noreferrer" className="main-link">
                 Atlas Tour
-              </a>
+              </a> */}
             </div>
           </section>
         {/* )} */}

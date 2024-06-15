@@ -5,10 +5,17 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
 
+// import TourModal from './components/TourModal';
+
+import imageGrey from './assets/daste-atlas-grey.jpg';
+import imageOrange from './assets/daste-atlas-orange.jpg';
+import imageWhite from './assets/daste-atlas-white.jpg';
+
 function AppWrapper() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'gray');
   const headerRef = useRef(null);
   const location = useLocation();
+  // const [showModal, setShowModal] = useState(true);
 
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
@@ -21,6 +28,15 @@ function AppWrapper() {
   };
 
   useEffect(() => {
+    const preloadImages = (imageUrls) => {
+      imageUrls.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+      });
+    };
+
+    preloadImages([imageGrey, imageOrange, imageWhite]);
+
     const updateHeaderHeight = () => {
       const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 60;
       document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
@@ -53,13 +69,17 @@ function AppWrapper() {
 
   return (
     <div className="App">
-      <Header theme={theme} ref={headerRef} />
-      <div className="container">
-        <main className="main-content">
-          <AppContent theme={theme} changeTheme={changeTheme} />
-        </main>
+      {/* {showModal && <TourModal onClose={() => setShowModal(false)} />} */}
+      {/* <div className={`content-wrapper ${showModal ? 'blurred' : ''}`}> */}
+      <div className={`content-wrapper`}>
+        <Header theme={theme} ref={headerRef} />
+        <div className="container">
+          <main className="main-content">
+            <AppContent theme={theme} changeTheme={changeTheme} />
+          </main>
+        </div>
+        <Footer changeTheme={changeTheme} sticky={location.pathname === '/'} />
       </div>
-      <Footer changeTheme={changeTheme} sticky={location.pathname === '/'} />
     </div>
   );
 }

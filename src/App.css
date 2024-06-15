@@ -1,7 +1,7 @@
 :root {
   --background-color: #afb8b6;
   --link-color: black;
-  --max-width: 1000px;
+  --max-width: 1100px;
   /* --min-width: 500px; */
   --header-height: 60px;
   --footer-height: 40px;
@@ -18,11 +18,11 @@
 
 .container {
   width: 100%;
-  /* max-width: var(--max-width); */
-  min-width: 100%;
+  max-width: var(--max-width);
+  /* min-width: 100%; */
   margin-top: var(--header-height);
   margin-bottom: var(--footer-height);
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  /* height: calc(100vh - var(--header-height) - var(--footer-height)); */
   box-sizing: border-box;
   overflow-y: auto;
   

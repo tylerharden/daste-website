@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Management",
+        "name": "Jez Ryan",
+        "link": "mailto:jez@mammalsounds.com",
+        "id": 0
+    },
+    {
+        "title": "US Bookings",
+        "name": "Julian Schwartzman",
+        "link": "mailto:julian.schwartzman@etp.agency",
+        "id": 1
+    },
+    {
+        "title": "AUS/NZ Bookings",
+        "name": "Brandon Wade",
+        "link": "mailto:brandon@selectmusic.com.au",
+        "id": 2
+    },
+    {
+        "title": "Band",
+        "name": "daste.",
+        "link": "mailto:thatdasteband@gmail.com",
+        "id": 3
+    }
+]

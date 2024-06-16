@@ -30,9 +30,9 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
           <div className="col-12 col-md-3 col-sm-6 d-none d-sm-flex justify-content-end">
             <nav>
               <ul className="navbar-nav flex-row">
-                <li className="nav-item"><a className="nav-link" href="https://daste-store.myshopify.com" target="_blank" rel="noopener noreferrer">STORE</a></li>
                 <li className="nav-item"><a className="nav-link" href="/tour">TOUR</a></li>
                 <li className="nav-item"><a className="nav-link" href="/music">MUSIC</a></li>
+                <li className="nav-item"><a className="nav-link" href="https://daste-store.myshopify.com" target="_blank" rel="noopener noreferrer">STORE</a></li>
                 <li className="nav-item"><a className="nav-link" href="/contact">CONTACT</a></li>
               </ul>
             </nav>
@@ -68,9 +68,9 @@ const Header = forwardRef(({ theme, changeTheme }, ref) => {
           <div className="col-12 d-flex justify-content-center mt-2">
             <nav>
               <ul className="navbar-nav flex-row">
-                <li className="nav-item"><a className="nav-link" href="https://daste-store.myshopify.com" target="_blank" rel="noopener noreferrer">STORE</a></li>
                 <li className="nav-item"><a className="nav-link" href="/tour">TOUR</a></li>
                 <li className="nav-item"><a className="nav-link" href="/music">MUSIC</a></li>
+                <li className="nav-item"><a className="nav-link" href="https://daste-store.myshopify.com" target="_blank" rel="noopener noreferrer">STORE</a></li>
                 <li className="nav-item"><a className="nav-link" href="/contact">CONTACT</a></li>
               </ul>
             </nav>

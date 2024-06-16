@@ -3,6 +3,7 @@
 .music {
   width: 100%;
   padding-top: 15px;
+  height: calc(90vh - var(--header-height) - var(--footer-height));
 }
 
 .music h1, .music h2 {

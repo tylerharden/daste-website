@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Contact.css';
+import contactsData from '../../data/contactsData.json';
 
-const Contact = ({ theme, changeTheme }) => {
+const Contact = () => {
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    setContacts(contactsData);
+  }, []);
+
   return (
-    <main className="contact">
-      <form action="mailto:thatdasteaband@gmail.com" method="post" enctype="text/plain">
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-        
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        
-        <input type="submit" value="Send" />
-      </form>
-    </main>
+    <div className="contact-container">
+      {contacts.map((contact) => (
+        <div key={contact.id} className="contact-item">
+          <div className="contact-title">{contact.title}</div>
+          <div className="contact-info">
+            <div className="contact-name">{contact.name}</div>
+            <a href={contact.link} className="contact-link">{contact.link.replace('mailto:', '')}</a>
+          </div>
+        </div>
+      ))}
+    </div>
   );
-}
+};
 
 export default Contact;

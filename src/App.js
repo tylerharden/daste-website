@@ -13,6 +13,7 @@ import imageWhite from './assets/daste-atlas-white.jpg';
 
 function AppWrapper() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'gray');
+  const [key, setKey] = useState(0); // State to force re-render
   const headerRef = useRef(null);
   const location = useLocation();
   // const [showModal, setShowModal] = useState(true);
@@ -57,9 +58,15 @@ function AppWrapper() {
     window.addEventListener('resize', updateHeaderHeight);
     window.addEventListener('scroll', handleScroll);
 
+    // Force a re-render after 2 seconds
+    const timer = setTimeout(() => {
+      setKey(prevKey => prevKey + 1);
+    }, 2000);
+
     return () => {
       window.removeEventListener('resize', updateHeaderHeight);
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -68,7 +75,7 @@ function AppWrapper() {
   }, [theme]);
 
   return (
-    <div className="App">
+    <div className="App" key={key}>
       {/* {showModal && <TourModal onClose={() => setShowModal(false)} />} */}
       {/* <div className={`content-wrapper ${showModal ? 'blurred' : ''}`}> */}
       <div className={`content-wrapper`}>

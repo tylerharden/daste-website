@@ -5,8 +5,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import './App.css';
 
-// import TourModal from './components/TourModal';
-
 import imageGrey from './assets/daste-atlas-grey.jpg';
 import imageOrange from './assets/daste-atlas-orange.jpg';
 import imageWhite from './assets/daste-atlas-white.jpg';
@@ -15,7 +13,6 @@ function AppWrapper() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'gray');
   const headerRef = useRef(null);
   const location = useLocation();
-  // const [showModal, setShowModal] = useState(true);
 
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
@@ -57,9 +54,15 @@ function AppWrapper() {
     window.addEventListener('resize', updateHeaderHeight);
     window.addEventListener('scroll', handleScroll);
 
+    // Force a re-render after 2 seconds
+    const timer = setTimeout(() => {
+      updateHeaderHeight();
+    }, 2000);
+
     return () => {
       window.removeEventListener('resize', updateHeaderHeight);
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -69,9 +72,7 @@ function AppWrapper() {
 
   return (
     <div className="App">
-      {/* {showModal && <TourModal onClose={() => setShowModal(false)} />} */}
-      {/* <div className={`content-wrapper ${showModal ? 'blurred' : ''}`}> */}
-      <div className={`content-wrapper`}>
+      <div className="content-wrapper">
         <Header theme={theme} ref={headerRef} />
         <div className="container">
           <main className="main-content">

@@ -7,7 +7,7 @@ const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName,
   // const isAnnounced = new Date(currentDate) >= new Date(announceDate);
   const isTicketAvailable = new Date(currentDate) >= new Date(ticketDate);
   const isRSVPAvailable = true// new Date(currentDate) >= new Date(announceDate);
-
+  const isTicketAvailable = true;
   // if (!isAnnounced) return null;
 
   return (

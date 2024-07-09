@@ -57,7 +57,7 @@ function AppWrapper() {
     // Force a re-render after 2 seconds
     const timer = setTimeout(() => {
       updateHeaderHeight();
-    }, 2000);
+    }, 500);
 
     return () => {
       window.removeEventListener('resize', updateHeaderHeight);

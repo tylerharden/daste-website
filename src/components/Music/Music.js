@@ -1,14 +1,20 @@
 import React from 'react';
 import './Music.css';
-// import { useLocation } from 'react-router-dom';
 import SpotifyEmbed from './SpotifyEmbed';
 
 const Music = ({ theme, changeTheme }) => {
-  // const location = useLocation();
   return (
     <div className='music'>
+      <div className="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/tS8d4XtT5oM?si=qst2KXv-XqEHGim4" 
+          title="YouTube video player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>
       <SpotifyEmbed artistId={'5uXWOfu1kA8mQ9bUp5GgxT'}/>
-      {/* {location.pathname === '/' && <h1>Music</h1>} */}
     </div>
   );
 }

@@ -17,11 +17,23 @@ function AppWrapper() {
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
+
     const bgColor = newTheme === 'orange' ? '#f05222' : newTheme === 'white' ? '#dcddde' : '#afb8b6';
+    const linkColor = newTheme === 'orange' ? 'white' : newTheme === 'white' ? '#f05222' : 'black';
+
     document.documentElement.style.setProperty('--background-color', bgColor);
-    document.documentElement.style.setProperty('--link-color', newTheme === 'orange' ? 'white' : newTheme === 'white' ? '#f05222' : 'black');
+    document.documentElement.style.setProperty('--link-color', linkColor);
     document.body.classList.remove('orange-theme', 'white-theme', 'gray-theme');
     document.body.classList.add(`${newTheme}-theme`);
+
+    // Update the theme-color meta tag
+    let themeColorMetaTag = document.querySelector('meta[name="theme-color"]');
+    if (!themeColorMetaTag) {
+      themeColorMetaTag = document.createElement('meta');
+      themeColorMetaTag.name = 'theme-color';
+      document.head.appendChild(themeColorMetaTag);
+    }
+    themeColorMetaTag.setAttribute('content', bgColor);
   };
 
   useEffect(() => {
@@ -54,7 +66,7 @@ function AppWrapper() {
     window.addEventListener('resize', updateHeaderHeight);
     window.addEventListener('scroll', handleScroll);
 
-    // Force a re-render after 2 seconds
+    // Force a re-render after 0.5 seconds
     const timer = setTimeout(() => {
       updateHeaderHeight();
     }, 500);

@@ -47,6 +47,7 @@
   width: 140px;
   height: auto;
   filter: var(--logo-filter);
+  margin-bottom: 10px;
 }
 
 .nav-link {
@@ -66,6 +67,11 @@
   .nav-link {
     font-size: 1rem;
   }
+
+  #logo-image {
+    margin-bottom: 0px;
+  }  
+
 }
 
 @media (max-width: 768px) {

@@ -6,13 +6,18 @@ import TourItem from './TourItem';
 
 const Tour = ({ theme }) => {
   const [events, setEvents] = useState([]);
-  const currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
 
   useEffect(() => {
-    setEvents(tourData);
-  }, []);
+    const currentDate = new Date(); // Moved inside useEffect
+    // Filter the tour data to include only future events
+    const filteredEvents = tourData.filter(event => {
+      const eventDate = new Date(event.date); // Parse the event date
+      return eventDate >= currentDate; // Include only events with a date greater than or equal to the current date
+    });
+    setEvents(filteredEvents);
+  }, []); // Empty dependency array to run this effect only once
 
-  // Group the tour data by country
+  // Group the filtered tour data by country
   const groupedByCountry = events.reduce((acc, tour) => {
     acc[tour.country] = acc[tour.country] || [];
     acc[tour.country].push(tour);
@@ -36,7 +41,6 @@ const Tour = ({ theme }) => {
               eventName={item.eventName}
               announceDate={item.announceDate}
               ticketDate={item.ticketDate}
-              currentDate={currentDate}
             />
           ))}
         </div>

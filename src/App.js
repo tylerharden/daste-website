@@ -1,3 +1,4 @@
+// App.js
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import AppContent from './AppContent';

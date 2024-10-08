@@ -92,6 +92,7 @@ function AppWrapper() {
             <AppContent theme={theme} changeTheme={changeTheme} />
           </main>
         </div>
+        {/* <Footer changeTheme={changeTheme} sticky='true' /> */}
         <Footer changeTheme={changeTheme} sticky={location.pathname === '/'} />
       </div>
     </div>

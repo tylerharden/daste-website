@@ -22,6 +22,11 @@
     margin: 1rem 0;
     padding: 0;
   }
+
+  .footer-text {
+    font-style: italic;
+    padding-bottom: 15px;
+  }
   
   .social-links li {
     list-style: none;

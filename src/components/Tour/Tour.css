@@ -26,9 +26,12 @@
     --border-color: grey;
   }
   
-  /* .tour-container {
-    padding-inline: 15px;
-  } */
+  .tour-container {
+    /* padding-inline: 15px; */
+    /* height: 80vh; */
+    /* min-height: 80vh; */
+    min-height: calc(91vh - var(--header-height) - var(--footer-height));
+  }
   
   .country-group h2 {
     padding-top: 15px;
@@ -100,8 +103,9 @@
     .tour-item-mobile {
       display: flex;
       padding-bottom: 15px;
+      /* padding-inline: 15px; */
       width: 100%;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       border-bottom: 1px solid var(--border-color);
     }
   
@@ -115,7 +119,7 @@
       display: flex; 
       flex-direction: column;
       width: 45%;
-      margin-right: -25px;
+      /* margin-right: -25px; */
     }
   
     .tour-item-mobile .right .btn {

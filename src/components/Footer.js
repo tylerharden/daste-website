@@ -58,6 +58,9 @@ const Footer = ({ changeTheme, sticky }) => {
             </ul>
           </div>
         </div>
+        <div>
+          <h6 className="footer-text">The music is yours to keep.</h6>
+        </div>
         <div className="theme-selector-container">
           <ThemeSelector changeTheme={changeTheme} />
         </div>

@@ -8,14 +8,14 @@ const Tour = ({ theme }) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const currentDate = new Date(); // Moved inside useEffect
+    const currentDate = new Date(); 
     // Filter the tour data to include only future events
     const filteredEvents = tourData.filter(event => {
-      const eventDate = new Date(event.date); // Parse the event date
-      return eventDate >= currentDate; // Include only events with a date greater than or equal to the current date
+      const eventDate = new Date(event.date); 
+      return eventDate >= currentDate; 
     });
     setEvents(filteredEvents);
-  }, []); // Empty dependency array to run this effect only once
+  }, []); 
 
   // Group the filtered tour data by country
   const groupedByCountry = events.reduce((acc, tour) => {
@@ -26,25 +26,29 @@ const Tour = ({ theme }) => {
 
   return (
     <div className="tour-container">
-      {Object.keys(groupedByCountry).map((country, index) => (
-        <div key={index} className="country-group mb-5">
-          <h2 className=''>{country}</h2>
-          {groupedByCountry[country].map((item, idx) => (
-            <TourItem
-              key={idx}
-              date={item.date}
-              day={item.day}
-              city={item.city}
-              venue={item.venue}
-              ticketLink={item.ticketLink}
-              facebookLink={item.facebookLink}
-              eventName={item.eventName}
-              announceDate={item.announceDate}
-              ticketDate={item.ticketDate}
-            />
-          ))}
-        </div>
-      ))}
+      {events.length === 0 ? (
+        <p>No future events...</p>
+      ) : (
+        Object.keys(groupedByCountry).map((country, index) => (
+          <div key={index} className="country-group">
+            <h2>{country}</h2>
+            {groupedByCountry[country].map((item, idx) => (
+              <TourItem
+                key={idx}
+                date={item.date}
+                day={item.day}
+                city={item.city}
+                venue={item.venue}
+                ticketLink={item.ticketLink}
+                facebookLink={item.facebookLink}
+                eventName={item.eventName}
+                announceDate={item.announceDate}
+                ticketDate={item.ticketDate}
+              />
+            ))}
+          </div>
+        ))
+      )}
     </div>
   );
 };

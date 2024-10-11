@@ -11,7 +11,7 @@ import imageOrange from './assets/daste-atlas-orange.jpg';
 import imageWhite from './assets/daste-atlas-white.jpg';
 
 function AppWrapper() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'gray');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'white');
   const headerRef = useRef(null);
   const location = useLocation();
 
@@ -92,8 +92,8 @@ function AppWrapper() {
             <AppContent theme={theme} changeTheme={changeTheme} />
           </main>
         </div>
-        {/* <Footer changeTheme={changeTheme} sticky='true' /> */}
-        <Footer changeTheme={changeTheme} sticky={location.pathname === '/'} />
+        <Footer changeTheme={changeTheme} sticky='true' />
+        {/* <Footer changeTheme={changeTheme} sticky={location.pathname === '/'} /> */}
       </div>
     </div>
   );

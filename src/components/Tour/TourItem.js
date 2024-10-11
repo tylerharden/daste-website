@@ -15,7 +15,7 @@ const formatDate = (dateStr) => {
 };
 
 const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName, announceDate, ticketDate }) => {
-  const isRSVPAvailable = true;
+  // const isRSVPAvailable = true;
   const isTicketAvailable = true;
 
   return (

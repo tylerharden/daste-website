@@ -1,6 +1,6 @@
 // App.js
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import AppContent from './AppContent';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -13,7 +13,7 @@ import imageWhite from './assets/daste-atlas-white.jpg';
 function AppWrapper() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'white');
   const headerRef = useRef(null);
-  const location = useLocation();
+  // const location = useLocation();
 
   const changeTheme = (newTheme) => {
     setTheme(newTheme);

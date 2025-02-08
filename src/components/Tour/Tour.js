@@ -71,6 +71,7 @@ const Tour = ({ theme }) => {
           </div>
         ))
       )}
+      <div className="bottom-padding"></div>
     </div>
   );
 };

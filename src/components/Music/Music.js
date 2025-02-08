@@ -14,7 +14,7 @@ const Music = ({ theme, changeTheme }) => {
           allowfullscreen>
         </iframe>
       </div>
-      <SpotifyEmbed artistId={'5uXWOfu1kA8mQ9bUp5GgxT'}/>
+      <SpotifyEmbed className="spotify-embed" artistId={'5uXWOfu1kA8mQ9bUp5GgxT'}/>
     </div>
   );
 }

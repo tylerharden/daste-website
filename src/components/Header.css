@@ -24,7 +24,6 @@
   font-display: swap;
 }
 
-
 .header {
   position: fixed;
   top: 0;
@@ -71,7 +70,6 @@
   #logo-image {
     margin-bottom: 0px;
   }  
-
 }
 
 @media (max-width: 768px) {

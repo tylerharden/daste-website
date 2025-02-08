@@ -45,6 +45,7 @@ body.gray-theme {
 
 .event-title {
   font-weight: bold;
+  font-style: italic;
 }
 
 .event-venue {

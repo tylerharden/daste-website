@@ -6,10 +6,7 @@ This project is a React-based application that includes music, tour, store, and 
 ## Table of Contents
 
 - [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
 - [File Structure](#file-structure)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 

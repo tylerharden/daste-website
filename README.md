@@ -22,31 +22,6 @@ This project is a React-based application that includes music, tour, store, and 
 - Songkick widget for tour dates.
 - Dynamic header with logo and navigation.
 
-## Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/daste.world.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd daste.world
-   ```
-3. Install the dependencies:
-   ```sh
-   npm install
-   ```
-
-## Usage
-
-To start the development server, run:
-```sh
-npm start
-```
-This will launch the application in your default web browser at `http://localhost:3000`.
-
 ## File Structure
 
 The project structure is as follows:
@@ -64,42 +39,14 @@ daste.world/
 │   ├── index.html
 │   └── other public files...
 ├── src/
-│   ├── components/
-│   │   ├── Header.js
-│   │   ├── Footer.js
-│   │   ├── Main.js
-│   │   ├── Tour.js
-│   │   ├── Music.js
-│   │   ├── Contact.js
-│   │   ├── ThemeSelector.js
-│   │   └── other components...
+│   ├── components/ 
 │   ├── App.js
 │   ├── App.css
 │   ├── index.js
 │   ├── styles.css
-│   └── other source files...
 ├── package.json
 └── README.md
 ```
-
-## Contributing
-
-Contributions are welcome! Please follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a new branch:
-   ```sh
-   git checkout -b feature/your-feature-name
-   ```
-3. Make your changes and commit them:
-   ```sh
-   git commit -m 'Add some feature'
-   ```
-4. Push to the branch:
-   ```sh
-   git push origin feature/your-feature-name
-   ```
-5. Open a pull request.
 
 ## License
 

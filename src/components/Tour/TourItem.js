@@ -55,9 +55,22 @@ const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName,
           <p className="mb-1 ticket-date">{ticketDate}</p>
         </div>
         <div className="col-md-4 d-flex flex-column">
-          <a href={ticketLink} target="_blank" rel="noopener noreferrer" disabled={!isTicketAvailable} className="ticket-button mb-1" style={{ pointerEvents: !isTicketAvailable ? 'none' : 'auto', opacity: !isTicketAvailable ? 0.5 : 1 }}>
-            Tickets
-          </a>
+        <a
+          href={ticketLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          disabled={!isTicketAvailable}
+          className="ticket-button mb-1"
+          onClick={() => {
+            fbq('track', 'Tickets Link', { eventName: eventName, city: city, date: date });
+          }}
+          style={{
+            pointerEvents: !isTicketAvailable ? 'none' : 'auto',
+            opacity: !isTicketAvailable ? 0.5 : 1,
+          }}
+        >
+          Tickets
+        </a>
           {/* <a href={facebookLink} target="_blank" rel="noopener noreferrer" disabled={!isRSVPAvailable} className="ticket-button mb-1" style={{ pointerEvents: !isRSVPAvailable ? 'none' : 'auto', opacity: !isRSVPAvailable ? 0.5 : 1 }}>
             RSVP
           </a> */}

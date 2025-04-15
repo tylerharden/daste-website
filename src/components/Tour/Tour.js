@@ -50,6 +50,14 @@ const Tour = ({ theme }) => {
 
   return (
     <div className="tour-container">
+      {/* <p className="text-center " style={{ paddingTop: '10px', fontStyle: 'italic' }}>
+        If you are having trouble with any ticket links, check out our{' '}
+        <a href="https://www.bandsintown.com/a/15465034-daste." target="_blank" rel="noopener noreferrer">
+          Bandsintown page
+        </a> or {' '} <a href="https://www.songkick.com/artists/9910004-daste" target="_blank" rel="noopener noreferrer">
+          Songkick page
+        </a> for more information.
+      </p> */}
       {events.length === 0 ? (
         <p>No future events...</p>
       ) : (

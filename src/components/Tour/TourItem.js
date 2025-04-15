@@ -1,3 +1,4 @@
+/* global fbq */
 import React from 'react';
 import { format, parseISO } from 'date-fns';
 import './Tour.css';

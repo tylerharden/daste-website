@@ -18,7 +18,7 @@ const Tour = ({ theme }) => {
         });
         const bandsintownEvents = response.data.map(event => {
           const eventDate = new Date(event.datetime);
-          console.log(response.data)
+          // console.log(response.data)
           return {
             date: isNaN(eventDate.getTime()) ? null : event.datetime, // Ensure date validity
             day: isNaN(eventDate.getTime()) ? '' : eventDate.toLocaleDateString('en-US', { weekday: 'long' }),

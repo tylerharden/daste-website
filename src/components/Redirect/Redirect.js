@@ -17,7 +17,11 @@ function Redirect() {
   useEffect(() => {
     if (finalUrl) {
       if (window.fbq) {
-        window.fbq('track', 'ticketLink');
+        window.fbq('track', 'Tickets Link', {
+          eventName: campaign || 'Unknown Campaign',
+          city: campaign?.replace(/[0-9]/g, '') || 'unknown',
+          source: source || 'meta'
+        });
       }
 
       setTimeout(() => {

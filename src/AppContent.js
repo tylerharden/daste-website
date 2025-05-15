@@ -9,6 +9,9 @@ import Main from './components/Main/Main';
 import Tour from './components/Tour/Tour';
 import Music from './components/Music/Music';
 import Contact from './components/Contact/Contact';
+import Redirect from './components/Redirect/Redirect';
+
+
 
 function AppContent({ theme, changeTheme }) {
 
@@ -20,6 +23,7 @@ function AppContent({ theme, changeTheme }) {
             <Route path="/tour" element={<Tour theme={theme} changeTheme={changeTheme} />} />
             <Route path="/music" element={<Music theme={theme} changeTheme={changeTheme} />} />
             <Route path="/contact" element={<Contact theme={theme} changeTheme={changeTheme} />} />
+            <Route path="/redirect" element={<Redirect />} />
           </Routes>
     </div>
   );

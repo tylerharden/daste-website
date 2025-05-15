@@ -17,18 +17,14 @@ function Redirect() {
   useEffect(() => {
     if (finalUrl) {
       if (window.fbq) {
-        window.fbq('track', 'Tickets Link', {
-          eventName: campaign || 'Unknown Campaign',
-          city: campaign?.replace(/[0-9]/g, '') || 'unknown',
-          source: source || 'meta'
-        });
+        window.fbq('track', 'Tickets Link');
       }
 
       setTimeout(() => {
         window.location.href = finalUrl;
       }, 3000);
     }
-  }, [finalUrl]);
+  }, [finalUrl, campaign, source]); // ✅ Fix: Add missing deps here
 
   if (!finalUrl) {
     return <div className="redirect-container"><p>Missing redirect URL.</p></div>;

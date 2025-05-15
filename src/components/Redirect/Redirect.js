@@ -1,3 +1,4 @@
+/* global fbq */
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -16,8 +17,8 @@ function Redirect() {
 
   useEffect(() => {
     if (finalUrl) {
-      if (window.fbq) {
-        window.fbq('track', 'Tickets Link');
+      if (fbq) {
+        fbq('track', 'Tickets Link');
       }
 
       setTimeout(() => {

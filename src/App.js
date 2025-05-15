@@ -82,12 +82,28 @@ function AppWrapper() {
   useEffect(() => {
     changeTheme(theme); // Ensure the theme is applied on initial load
   }, [theme]);
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+      function updatePadding() {
+        console.log('Updating padding');
+        if (footerRef.current) {
+          document.documentElement.style.setProperty(
+            '--footer-height',
+            `${footerRef.current.offsetHeight}px`
+          );
+        }
+      }
+      updatePadding();
+      window.addEventListener('resize', updatePadding);
+    return () => window.removeEventListener('resize', updatePadding);
+  }, []);      
 
   return (
     <div className="App">
       <div className="content-wrapper">
         <Header theme={theme} ref={headerRef} />
-        <div className="container">
+        <div className="container" style={{ paddingBottom: 'var(--footer-height)' }}>
           <main className="main-content">
             <AppContent theme={theme} changeTheme={changeTheme} />
           </main>

@@ -1,36 +1,68 @@
-// components/Redirect/Redirect.js
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import './redirect.css'; // Create this file for styling
+import { motion } from 'framer-motion';
+import './redirect.css';
 
 function Redirect() {
   const [searchParams] = useSearchParams();
-  const redirectUrl = searchParams.get('url');
+  const baseUrl = searchParams.get('url');
+  const campaign = searchParams.get('campaign');
+  const source = searchParams.get('source') || 'meta';
+  const medium = 'paid_social';
+
+  const finalUrl = baseUrl
+    ? `${baseUrl}?utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}`
+    : null;
 
   useEffect(() => {
-    if (redirectUrl) {
-      // Fire Meta Pixel event
+    if (finalUrl) {
       if (window.fbq) {
         window.fbq('track', 'ticketLink');
       }
 
-      // Redirect after short delay
       setTimeout(() => {
-        window.location.href = redirectUrl;
-      }, 2000);
+        window.location.href = finalUrl;
+      }, 3000);
     }
-  }, [redirectUrl]);
+  }, [finalUrl]);
 
-  if (!redirectUrl) {
+  if (!finalUrl) {
     return <div className="redirect-container"><p>Missing redirect URL.</p></div>;
   }
 
   return (
-    <div className="redirect-container">
-      <h1 className="redirect-title">Hang tight…</h1>
-      <p className="redirect-subtitle">We're taking you to the ticketing site</p>
-      <a href={redirectUrl} className="redirect-button">Buy Tickets</a>
-    </div>
+    <motion.div
+      className="redirect-container"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.h1
+        className="redirect-title"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
+        Hang tight...
+      </motion.h1>
+      <motion.p
+        className="redirect-subtitle"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+      >
+        We're taking you to the tickets
+      </motion.p>
+      <motion.a
+        href={finalUrl}
+        className="redirect-button"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9 }}
+      >
+        Buy Tickets
+      </motion.a>
+    </motion.div>
   );
 }
 

@@ -26,10 +26,8 @@ html, body {
 .container {
   width: 100%;
   max-width: var(--max-width);
-  /* min-width: 100%; */
   margin-top: var(--header-height);
-  margin-bottom: var(--footer-height);
-  /* height: calc(100vh - var(--header-height) - var(--footer-height)); */
+  padding-bottom: var(--footer-height); /* Use padding instead of margin for correct spacing */
   box-sizing: border-box;
   overflow-y: auto;
   

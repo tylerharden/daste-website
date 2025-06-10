@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { useLocation } from 'react-router-dom'; // <-- Add this
 import './Footer.css';
 import ThemeSelector from './ThemeSelector';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const Footer = ({ changeTheme, sticky }) => {
+const Footer = forwardRef(({ changeTheme, sticky }, ref) => {
   const location = useLocation(); // <-- Get current path
   const isTourPage = location.pathname === '/tour';
 
   return (
-    <footer className={`footer ${sticky ? 'sticky-footer' : ''}`}>
+    <footer ref={ref} className={`footer ${sticky ? 'sticky-footer' : ''}`}>
       <div>
         <div className="row justify-content-center">
           <div className="col-12 d-flex flex-column align-items-center text-center">
@@ -86,6 +86,6 @@ const Footer = ({ changeTheme, sticky }) => {
       </div>
     </footer>
   );
-};
+});
 
 export default Footer;

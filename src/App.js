@@ -13,7 +13,7 @@ import imageWhite from './assets/daste-atlas-white.jpg';
 function AppWrapper() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'white');
   const headerRef = useRef(null);
-  // const location = useLocation();
+  const footerRef = useRef(null); // Move this up so it's not recreated on every render
 
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
@@ -82,34 +82,31 @@ function AppWrapper() {
   useEffect(() => {
     changeTheme(theme); // Ensure the theme is applied on initial load
   }, [theme]);
-  const footerRef = useRef(null);
 
   useEffect(() => {
-      function updatePadding() {
-        console.log('Updating padding');
-        if (footerRef.current) {
-          document.documentElement.style.setProperty(
-            '--footer-height',
-            `${footerRef.current.offsetHeight}px`
-          );
-        }
+    function updateFooterPadding() {
+      if (footerRef.current) {
+        document.documentElement.style.setProperty(
+          '--footer-height',
+          `${footerRef.current.offsetHeight}px`
+        );
       }
-      updatePadding();
-      window.addEventListener('resize', updatePadding);
-    return () => window.removeEventListener('resize', updatePadding);
-  }, []);      
+    }
+    updateFooterPadding();
+    window.addEventListener('resize', updateFooterPadding);
+    return () => window.removeEventListener('resize', updateFooterPadding);
+  }, [theme]); // Also update on theme change
 
   return (
     <div className="App">
       <div className="content-wrapper">
         <Header theme={theme} ref={headerRef} />
-        <div className="container" style={{ paddingBottom: 'var(--footer-height)' }}>
+        <div className="container">
           <main className="main-content">
             <AppContent theme={theme} changeTheme={changeTheme} />
           </main>
         </div>
-        <Footer changeTheme={changeTheme} sticky='true' />
-        {/* <Footer changeTheme={changeTheme} sticky={location.pathname === '/'} /> */}
+        <Footer changeTheme={changeTheme} sticky={true} ref={footerRef} />
       </div>
     </div>
   );

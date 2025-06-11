@@ -103,6 +103,7 @@ function AppWrapper() {
         <Header theme={theme} ref={headerRef} />
         <div className="container">
           <main className="main-content">
+            {/* Only the routed content changes */}
             <AppContent theme={theme} changeTheme={changeTheme} />
           </main>
         </div>

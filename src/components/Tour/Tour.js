@@ -6,6 +6,7 @@ import TourItem from './TourItem';
 
 const Tour = ({ theme }) => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTourData = async () => {
@@ -18,7 +19,6 @@ const Tour = ({ theme }) => {
         });
         const bandsintownEvents = response.data.map(event => {
           const eventDate = new Date(event.datetime);
-          // console.log(response.data)
           return {
             date: isNaN(eventDate.getTime()) ? null : event.datetime, // Ensure date validity
             day: isNaN(eventDate.getTime()) ? '' : eventDate.toLocaleDateString('en-US', { weekday: 'long' }),
@@ -30,14 +30,13 @@ const Tour = ({ theme }) => {
             eventName: event.title || 'Concert',
           };
         });
-
-        // Set combined events
         setEvents(bandsintownEvents);
       } catch (error) {
         console.error('Error fetching Bandsintown data:', error);
+      } finally {
+        setLoading(false);
       }
     };
-
     fetchTourData();
   }, []);
 
@@ -58,7 +57,9 @@ const Tour = ({ theme }) => {
           Songkick page
         </a> for more information.
       </p> */}
-      {events.length === 0 ? (
+      {loading ? (
+        <p>Loading events...</p>
+      ) : events.length === 0 ? (
         <p>No future events...</p>
       ) : (
         Object.keys(groupedByCountry).map((country, index) => (

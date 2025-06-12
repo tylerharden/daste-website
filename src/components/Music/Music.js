@@ -1,11 +1,23 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Music.css';
 import SpotifyEmbed from './SpotifyEmbed';
 
 const Music = ({ theme, changeTheme }) => {
   return (
-    <div className='music'>
-      <div className="video-wrapper">
+    <motion.div
+      className='music'
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
+      <motion.div
+        className="video-wrapper"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+      >
         <iframe 
           src="https://www.youtube.com/embed/tS8d4XtT5oM?si=qst2KXv-XqEHGim4" 
           title="YouTube video player" 
@@ -13,9 +25,17 @@ const Music = ({ theme, changeTheme }) => {
           referrerpolicy="strict-origin-when-cross-origin" 
           allowfullscreen>
         </iframe>
-      </div>
-      <SpotifyEmbed className="spotify-embed" artistId={'5uXWOfu1kA8mQ9bUp5GgxT'}/>
-    </div>
+      </motion.div>
+      <motion.div
+        className="spotify-embed"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+      >
+        <SpotifyEmbed artistId={'5uXWOfu1kA8mQ9bUp5GgxT'}/>
+      </motion.div>
+    </motion.div>
   );
 }
 

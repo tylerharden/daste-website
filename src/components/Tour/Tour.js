@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import axios from 'axios';
 import './Tour.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -48,7 +49,12 @@ const Tour = ({ theme }) => {
   }, {});
 
   return (
-    <div className="tour-container">
+    <motion.div
+      className="tour-container"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       {/* <p className="text-center " style={{ paddingTop: '10px', fontStyle: 'italic' }}>
         If you are having trouble with any ticket links, check out our{' '}
         <a href="https://www.bandsintown.com/a/15465034-daste." target="_blank" rel="noopener noreferrer">
@@ -63,7 +69,14 @@ const Tour = ({ theme }) => {
         <p>No future events...</p>
       ) : (
         Object.keys(groupedByCountry).map((country, index) => (
-          <div key={index} className="country-group">
+          <motion.div
+            key={index}
+            className="country-group"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay: index * 0.1, ease: 'easeOut' }}
+          >
             <h2>{country}</h2>
             {groupedByCountry[country].map((item, idx) => (
               <TourItem
@@ -77,11 +90,11 @@ const Tour = ({ theme }) => {
                 eventName={item.eventName}
               />
             ))}
-          </div>
+          </motion.div>
         ))
       )}
       <div className="bottom-padding"></div>
-    </div>
+    </motion.div>
   );
 };
 

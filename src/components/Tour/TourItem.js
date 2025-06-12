@@ -1,5 +1,6 @@
 /* global fbq */
 import React from 'react';
+import { motion } from 'framer-motion';
 import { format, parseISO } from 'date-fns';
 import './Tour.css';
 
@@ -22,7 +23,13 @@ const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName,
   return (
     <>
       {/* Mobile Layout */}
-      <div className="d-flex d-md-none tour-item-mobile row mb-4">
+      <motion.div
+        className="d-flex d-md-none tour-item-mobile row mb-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
         <div className="left col-8">
           <p className="mb-1 event-date">{formatDate(date)}</p>
           <p className="mb-1 event-title">{eventName}</p>
@@ -37,10 +44,16 @@ const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName,
             RSVP
           </a> */}
         </div>
-      </div>
+      </motion.div>
 
       {/* Desktop Layout */}
-      <div className="d-none d-md-flex tour-item row mb-4">
+      <motion.div
+        className="d-none d-md-flex tour-item row mb-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
         <div className="col-md-2">
           <p className="mb-1 event-date">{formatDate(date)}</p>
         </div>
@@ -76,7 +89,7 @@ const TourItem = ({ date, day, city, venue, ticketLink, facebookLink, eventName,
             RSVP
           </a> */}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

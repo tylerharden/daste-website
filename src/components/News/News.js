@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './News.css';
 import newsData from '../../data/newsData.json';
 
@@ -12,7 +13,13 @@ const imageMap = {
 };
 
 const NewsItem = ({ photo, title, description, link, linkButtonTitle }) => (
-  <div className="news-item">
+  <motion.div
+    className="news-item"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+  >
     <div className="news-content">
       {/* <h2 className="news-title">{title}</h2> */}
       <div className="news-photo-container">
@@ -24,7 +31,7 @@ const NewsItem = ({ photo, title, description, link, linkButtonTitle }) => (
       </a> */}
     </div>
     
-  </div>
+  </motion.div>
 );
 
 const News = () => {

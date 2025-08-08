@@ -26,6 +26,15 @@ body.gray-theme {
   --border-color: grey;
 }
 
+body.blue-theme {
+  --text-color: #3852a5;
+  --button-color: #3852a5;
+  --button-text-color: #e3e4e5;
+  --border-color: #3852a5;
+  --link-color: #3852a5;
+  --background-color: #e3e4e5;
+}
+
 #band-image {
   max-width: 100%;
   /* max-height: calc(80vh - var(--header-height) - var(--footer-height)); */
@@ -44,7 +53,8 @@ body.gray-theme {
 
 .main-container {
   height: 100vh;
-  background-color: --background-color;
+  /* background-color: --background-color; */
+  background-color: var(--background-color);
 }
 
 .section {

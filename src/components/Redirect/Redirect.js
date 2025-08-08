@@ -25,7 +25,7 @@ function Redirect() {
         window.location.href = finalUrl;
       }, 3000);
     }
-  }, [finalUrl, campaign, source]); // ✅ Fix: Add missing deps here
+  }, [finalUrl, campaign, source]); 
 
   if (!finalUrl) {
     return <div className="redirect-container"><p>Missing redirect URL.</p></div>;

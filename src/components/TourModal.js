@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import './TourModal.css';
-import tourPoster from '../assets/1.daste-World-Poster-NoLogo.jpg'; // Update with your actual tour poster path
+import tourPoster from '../assets/1.daste-World-Poster-NoLogo.jpg'; 
 
 const TourModal = ({ onClose }) => {
   useEffect(() => {
-    // Add blur effect to the background
     document.body.classList.add('blurred');
 
     return () => {
-      // Remove blur effect when the modal is closed
       document.body.classList.remove('blurred');
     };
   }, []);

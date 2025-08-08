@@ -13,21 +13,29 @@ import imageWhite from './assets/daste-atlas-white.jpg';
 function AppWrapper() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'white');
   const headerRef = useRef(null);
-  const footerRef = useRef(null); // Move this up so it's not recreated on every render
+  const footerRef = useRef(null); 
 
   const changeTheme = (newTheme) => {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
 
-    const bgColor = newTheme === 'orange' ? '#f05222' : newTheme === 'white' ? '#dcddde' : '#afb8b6';
-    const linkColor = newTheme === 'orange' ? 'white' : newTheme === 'white' ? '#f05222' : 'black';
+    // Map theme -> background + link colors
+    const themeMap = {
+      orange: { bg: '#f05222', link: 'white' },
+      white:  { bg: '#dcddde', link: '#f05222' },
+      gray:   { bg: '#afb8b6', link: 'black' },
+      blue:   { bg: '#e3e4e5', link: '#3852a5' }, // NEW
+    };
+
+    const fallback = { bg: '#afb8b6', link: 'black' };
+    const { bg: bgColor, link: linkColor } = themeMap[newTheme] || fallback;
 
     document.documentElement.style.setProperty('--background-color', bgColor);
     document.documentElement.style.setProperty('--link-color', linkColor);
-    document.body.classList.remove('orange-theme', 'white-theme', 'gray-theme');
+
+    document.body.classList.remove('orange-theme', 'white-theme', 'gray-theme', 'blue-theme');
     document.body.classList.add(`${newTheme}-theme`);
 
-    // Update the theme-color meta tag
     let themeColorMetaTag = document.querySelector('meta[name="theme-color"]');
     if (!themeColorMetaTag) {
       themeColorMetaTag = document.createElement('meta');
@@ -55,8 +63,8 @@ function AppWrapper() {
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const maxScroll = 200; // Adjust this value based on when you want the effect to fully apply
-      const blurValue = Math.min(scrollTop / maxScroll, 1) * 10; // Up to 10px blur
+      const maxScroll = 200; 
+      const blurValue = Math.min(scrollTop / maxScroll, 1) * 10; 
 
       if (headerRef.current) {
         headerRef.current.style.backdropFilter = `blur(${blurValue}px)`;
@@ -67,7 +75,6 @@ function AppWrapper() {
     window.addEventListener('resize', updateHeaderHeight);
     window.addEventListener('scroll', handleScroll);
 
-    // Force a re-render after 0.5 seconds
     const timer = setTimeout(() => {
       updateHeaderHeight();
     }, 500);
@@ -80,7 +87,7 @@ function AppWrapper() {
   }, []);
 
   useEffect(() => {
-    changeTheme(theme); // Ensure the theme is applied on initial load
+    changeTheme(theme); 
   }, [theme]);
 
   useEffect(() => {
@@ -95,7 +102,7 @@ function AppWrapper() {
     updateFooterPadding();
     window.addEventListener('resize', updateFooterPadding);
     return () => window.removeEventListener('resize', updateFooterPadding);
-  }, [theme]); // Also update on theme change
+  }, [theme]); 
 
   return (
     <div className="App">
@@ -103,7 +110,6 @@ function AppWrapper() {
         <Header theme={theme} ref={headerRef} />
         <div className="container">
           <main className="main-content">
-            {/* Only the routed content changes */}
             <AppContent theme={theme} changeTheme={changeTheme} />
           </main>
         </div>

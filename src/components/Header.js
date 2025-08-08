@@ -4,10 +4,13 @@ import './Header.css';
 import dasteLogoOffWhite from '../assets/daste.-LogoOffWhite.png';
 import dasteLogoBlack from '../assets/daste.-LogoBlack.png';
 import dasteLogoOrange from '../assets/daste.-LogoOrange.png';
+import dasteLogoBlue from '../assets/daste.-LogoBlue.png';
 
 const Header = forwardRef(({ theme, changeTheme }, ref) => {
   const getLogo = () => {
     switch (theme) {
+      case 'blue':
+        return dasteLogoBlue;
       case 'orange':
         return dasteLogoOffWhite;
       case 'white':

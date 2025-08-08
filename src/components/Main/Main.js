@@ -3,6 +3,7 @@ import './Main.css';
 import imageGrey from '../../assets/daste-atlas-grey.jpg';
 import imageOrange from '../../assets/daste-atlas-orange.jpg';
 import imageWhite from '../../assets/daste-atlas-white.jpg';
+import imageBlue from '../../assets/dasteWORLD_Press_5305_halftone Large.jpeg';
 import { motion } from 'framer-motion';
 
 const Main = ({ theme, changeTheme }) => {
@@ -10,6 +11,8 @@ const Main = ({ theme, changeTheme }) => {
 
   const getImageSrc = (theme) => {
     switch (theme) {
+      case 'blue':
+        return imageBlue;
       case 'orange':
         return imageOrange;
       case 'white':

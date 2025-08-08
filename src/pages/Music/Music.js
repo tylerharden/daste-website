@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Music.css';
 import SpotifyEmbed from './SpotifyEmbed';
-import LatestUpdateCard from '../LatestUpdateCard';
+// import LatestUpdateCard from '../cards/LatestUpdateCard';
 
 const Music = ({ theme, changeTheme }) => {
   return (

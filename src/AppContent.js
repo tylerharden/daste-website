@@ -5,21 +5,21 @@ import { AnimatePresence } from 'framer-motion';
 import './App.css';
 // import Header from './components/Header';
 // import Footer from './components/Footer';
-import News from './components/News/News';
-import Main from './components/Main/Main';
-import Tour from './components/Tour/Tour';
-import Music from './components/Music/Music';
-import Contact from './components/Contact/Contact';
-import Redirect from './components/Redirect/Redirect';
-import PageFade from './components/PageFade';
-
-
+import News from './pages/News/News';
+import Main from './pages/Main/Main';
+import Tour from './pages/Tour/Tour';
+import Music from './pages/Music/Music';
+import NotFound from './pages/NotFound/NotFound';
+import Contact from './pages/Contact/Contact';
+import Redirect from './components/redirect/Redirect';
+import PageFade from './components/animations/PageFade';
 
 function AppContent({ theme, changeTheme }) {
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<PageFade keyProp="main"><Main theme={theme} changeTheme={changeTheme} /></PageFade>} />
         <Route path="/news" element={<PageFade keyProp="news"><News theme={theme} changeTheme={changeTheme} /></PageFade>} /> 
         <Route path="/tour" element={<PageFade keyProp="tour"><Tour theme={theme} changeTheme={changeTheme} /></PageFade>} />

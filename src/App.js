@@ -2,8 +2,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppContent from './AppContent';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import './App.css';
 
 import imageGrey from './assets/daste-atlas-grey.jpg';
@@ -19,12 +19,11 @@ function AppWrapper() {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
 
-    // Map theme -> background + link colors
     const themeMap = {
       orange: { bg: '#f05222', link: 'white' },
       white:  { bg: '#dcddde', link: '#f05222' },
       gray:   { bg: '#afb8b6', link: 'black' },
-      blue:   { bg: '#e3e4e5', link: '#3852a5' }, // NEW
+      blue:   { bg: '#e3e4e5', link: '#3852a5' }, 
     };
 
     const fallback = { bg: '#afb8b6', link: 'black' };

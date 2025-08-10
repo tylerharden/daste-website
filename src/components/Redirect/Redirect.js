@@ -23,7 +23,7 @@ function Redirect() {
 
       setTimeout(() => {
         window.location.href = finalUrl;
-      }, 3000);
+      }, 1000);
     }
   }, [finalUrl, campaign, source]); 
 

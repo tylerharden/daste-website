@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
-import { useLocation } from 'react-router-dom'; // <-- Add this
+import { useLocation } from 'react-router-dom';
 import './Footer.css';
-import ThemeSelector from './ThemeSelector';
+import ThemeSelector from '../themeSelector/ThemeSelector';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = forwardRef(({ changeTheme, sticky }, ref) => {
-  const location = useLocation(); // <-- Get current path
+  const location = useLocation(); 
   const isTourPage = location.pathname === '/tour';
 
   return (

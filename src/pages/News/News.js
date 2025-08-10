@@ -2,14 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './News.css';
 import newsData from '../../data/newsData.json';
-
-// Import images
 import image1 from '../../assets/1.daste-World-Poster-NoLogo.jpg';
-// Import more images as needed
 
 const imageMap = {
   image1,
-  // Add more image mappings as needed
 };
 
 const NewsItem = ({ photo, title, description, link, linkButtonTitle }) => (
@@ -38,7 +34,6 @@ const News = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    // Filter and sort news items based on selectedToDisplay and orderInt
     const filteredNews = newsData
       .filter(item => item.selectedToDisplay)
       .sort((a, b) => a.orderInt - b.orderInt);
@@ -52,8 +47,6 @@ const News = () => {
           <NewsItem
             key={index}
             photo={item.photo}
-            // title={item.title}
-            // description={item.description}
             link={item.link}
             linkButtonTitle={item.linkButtonTitle}
           />

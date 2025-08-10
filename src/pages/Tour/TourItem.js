@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 import { format, parseISO } from 'date-fns';
 import './Tour.css';
 
-// Helper function to format date
 const formatDate = (dateStr) => {
   if (!dateStr) return 'Date TBA';
   try {
-    const date = parseISO(dateStr); // Parse ISO format
-    return format(date, 'MMMM do, EEEE'); // Format to 'Month day, DayOfWeek' (e.g., 'January 1st, Monday')
+    const date = parseISO(dateStr); 
+    return format(date, 'MMMM do, EEEE'); //  'month day, dayOfWeek' (e.g., 'January 1st, Monday')
   } catch (error) {
     console.error('Invalid date format:', error);
     return 'Invalid date';

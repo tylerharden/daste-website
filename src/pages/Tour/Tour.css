@@ -131,3 +131,27 @@ body.gray-theme {
     font-size: 0.9rem;
   }
 }
+
+.loading-wrap {
+  min-height: 240px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--border-color);  
+  border-top-color: var(--text-color);    
+  animation: spin 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

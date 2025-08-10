@@ -5,6 +5,12 @@ import './Tour.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TourItem from './TourItem';
 
+const Spinner = () => (
+  <div className="loading-wrap" role="status" aria-live="polite" aria-label="Loading events">
+    <div className="spinner" />
+  </div>
+);
+
 const Tour = ({ theme }) => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,16 +18,13 @@ const Tour = ({ theme }) => {
   useEffect(() => {
     const fetchTourData = async () => {
       try {
-        // Bandsintown API fetch
         const response = await axios.get('https://rest.bandsintown.com/artists/daste./events', {
-          params: {
-            app_id: '54644e531863078b3a1f8e51bd3288a3',
-          },
+          params: { app_id: '54644e531863078b3a1f8e51bd3288a3' },
         });
         const bandsintownEvents = response.data.map(event => {
           const eventDate = new Date(event.datetime);
           return {
-            date: isNaN(eventDate.getTime()) ? null : event.datetime, // Ensure date validity
+            date: isNaN(eventDate.getTime()) ? null : event.datetime,
             day: isNaN(eventDate.getTime()) ? '' : eventDate.toLocaleDateString('en-US', { weekday: 'long' }),
             city: event.venue.city,
             country: event.venue.country,
@@ -41,7 +44,6 @@ const Tour = ({ theme }) => {
     fetchTourData();
   }, []);
 
-  // Group the filtered tour data by country
   const groupedByCountry = events.reduce((acc, tour) => {
     acc[tour.country] = acc[tour.country] || [];
     acc[tour.country].push(tour);
@@ -55,16 +57,8 @@ const Tour = ({ theme }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      {/* <p className="text-center " style={{ paddingTop: '10px', fontStyle: 'italic' }}>
-        If you are having trouble with any ticket links, check out our{' '}
-        <a href="https://www.bandsintown.com/a/15465034-daste." target="_blank" rel="noopener noreferrer">
-          Bandsintown page
-        </a> or {' '} <a href="https://www.songkick.com/artists/9910004-daste" target="_blank" rel="noopener noreferrer">
-          Songkick page
-        </a> for more information.
-      </p> */}
       {loading ? (
-        <p>Loading events...</p>
+        <Spinner />
       ) : events.length === 0 ? (
         <p>No future events...</p>
       ) : (

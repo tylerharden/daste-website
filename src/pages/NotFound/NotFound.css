@@ -1,0 +1,37 @@
+.notfound-container {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.notfound-title {
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: bold;
+  margin: 0;
+}
+
+.notfound-subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.notfound-button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Favorit', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.notfound-button:hover {
+  text-decoration: underline;
+}

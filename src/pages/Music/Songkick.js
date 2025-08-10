@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './ThemeSelector.css';
+import '../themeSelector/ThemeSelector.css';
 
 const Songkick = ({ changeTheme }) => {
 

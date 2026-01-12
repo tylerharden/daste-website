@@ -14,17 +14,22 @@ const Footer = forwardRef(({ changeTheme, sticky }, ref) => {
         <div className="row justify-content-center">
           <div className="col-12 d-flex flex-column align-items-center text-center">
 
-            {isTourPage ? (
-              <p className="text-center" style={{ paddingTop: '10px', fontStyle: 'italic' }}>
-                If you are having trouble with any ticket links, check out {' '}
-                <a href="https://www.bandsintown.com/a/15465034-daste." target="_blank" rel="noopener noreferrer">
-                  Bandsintown 
-                </a>{' '}or{' '}
-                <a href="https://www.songkick.com/artists/9910004-daste" target="_blank" rel="noopener noreferrer">
-                  Songkick
-                </a>{' '}
-              </p>
-            ) : (
+            {isTourPage 
+            ? 
+            (
+              <p className="text-center" style={{ paddingTop: '10px', fontStyle: 'italic' }}></p>
+              // <p className="text-center" style={{ paddingTop: '10px', fontStyle: 'italic' }}>
+              //   If you are having trouble with any ticket links, check out {' '}
+              //   <a href="https://www.bandsintown.com/a/15465034-daste." target="_blank" rel="noopener noreferrer">
+              //     Bandsintown 
+              //   </a>{' '}or{' '}
+              //   <a href="https://www.songkick.com/artists/9910004-daste" target="_blank" rel="noopener noreferrer">
+              //     Songkick
+              //   </a>{' '}
+              // </p>
+            ) 
+            : 
+            (
               <>
                 <ul className="social-links list-inline text-center">
                   <li className="list-inline-item col-2 col-sm-1 spotify">

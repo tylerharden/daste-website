@@ -46,6 +46,37 @@
     height: 100%;
     margin-bottom: 30px;
   }
+
+  .footer-tour-message {
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+
+  .footer-tour-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+
+  .footer-tour-button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-family: 'Favorit', Arial, sans-serif;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+
+  .footer-tour-button:hover {
+    text-decoration: underline;
+    transform: translateY(-2px);
+  }
   
     @media (min-width: 992px) {
     .social-links li {

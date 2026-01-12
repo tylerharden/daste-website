@@ -16,11 +16,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* min-height: 100vh; */
-  /* height: calc(100vh - 60px - 40px); */
   background-color: var(--background-color);
   color: var(--text-color);
-  height: calc(90vh - var(--header-height) - var(--footer-height));
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 
 .contact-item {

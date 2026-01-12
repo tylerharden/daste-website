@@ -30,31 +30,33 @@ const Music = ({ theme, changeTheme }) => {
         }}
       /> */}
 
-      <motion.div
-        className="video-wrapper"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-      >
-        <iframe 
-          src="https://www.youtube.com/embed/tS8d4XtT5oM?si=qst2KXv-XqEHGim4" 
-          title="YouTube video player" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowFullScreen
-        />
-      </motion.div>
+      <div className="media-grid">
+        <motion.div
+          className="video-wrapper"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+        >
+          <iframe 
+            src="https://www.youtube.com/embed/tS8d4XtT5oM?si=qst2KXv-XqEHGim4" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowFullScreen
+          />
+        </motion.div>
 
-      <motion.div
-        className="spotify-embed"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-      >
-        <SpotifyEmbed artistId={'5uXWOfu1kA8mQ9bUp5GgxT'} />
-      </motion.div>
+        <motion.div
+          className="spotify-embed"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+        >
+          <SpotifyEmbed artistId={'5uXWOfu1kA8mQ9bUp5GgxT'} />
+        </motion.div>
+      </div>
     </motion.div>
     </>
   );

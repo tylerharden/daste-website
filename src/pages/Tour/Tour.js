@@ -77,7 +77,52 @@ const Tour = ({ theme }) => {
       {loading ? (
         <Spinner />
       ) : events.length === 0 ? (
-        <p>No future events...</p>
+        <motion.div
+          className="no-events-container"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          <motion.h2
+            className="no-events-title"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            No Shows Scheduled
+          </motion.h2>
+          <motion.p
+            className="no-events-subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            Check back soon for upcoming tour dates
+          </motion.p>
+          <motion.div
+            className="no-events-buttons"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            <a 
+              href="https://www.bandsintown.com/a/15465034-daste." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="no-events-button"
+            >
+              Follow on Bandsintown
+            </a>
+            <a 
+              href="https://www.songkick.com/artists/9910004-daste" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="no-events-button"
+            >
+              Follow on Songkick
+            </a>
+          </motion.div>
+        </motion.div>
       ) : (
         Object.keys(groupedByCountry).map((country, index) => (
           <motion.div

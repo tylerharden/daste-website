@@ -19,8 +19,16 @@
 
 }
 
+.media-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
 .spotify-embed {
-  margin: 20px 0 0; /* Add space above the Spotify embed */
+  flex: 1;
+  min-height: 450px;
 }
 
 /* Responsive iframe */
@@ -29,7 +37,7 @@
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
-  margin-bottom: 20px; /* Add space below the video */
+  flex: 1;
 }
 
 .video-wrapper iframe {
@@ -39,4 +47,23 @@
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Desktop layout - side by side */
+@media (min-width: 768px) {
+  .media-grid {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .video-wrapper {
+    padding-bottom: 0;
+    height: auto;
+    min-height: 450px;
+  }
+
+  .video-wrapper iframe {
+    position: relative;
+    height: 100%;
+  }
 }

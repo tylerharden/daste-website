@@ -2,16 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Music.css';
 import SpotifyEmbed from './SpotifyEmbed';
+import SEO from '../../components/SEO';
 // import LatestUpdateCard from '../cards/LatestUpdateCard';
 
 const Music = ({ theme, changeTheme }) => {
   return (
-    <motion.div
-      className='music'
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-    >
+    <>
+      <SEO 
+        title="daste. Music - Stream on Spotify, Apple Music & YouTube"
+        description="Listen to daste.'s latest releases and albums. Stream on Spotify, Apple Music, YouTube Music, and Bandcamp. Watch music videos and discover our discography."
+        url="https://daste.world/music"
+        keywords="daste music, daste spotify, daste album, dasteWORLD, electronic music, stream daste, daste songs"
+      />
+      <motion.div
+        className='music'
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
       {/* <LatestUpdateCard
         artworkSrc="/images/dasteWORLD_Album_Artwork.jpeg"
         links={{
@@ -48,6 +56,7 @@ const Music = ({ theme, changeTheme }) => {
         <SpotifyEmbed artistId={'5uXWOfu1kA8mQ9bUp5GgxT'} />
       </motion.div>
     </motion.div>
+    </>
   );
 }
 

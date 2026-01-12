@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './News.css';
 import newsData from '../../data/newsData.json';
+import SEO from '../../components/SEO';
 import image1 from '../../assets/1.daste-World-Poster-NoLogo.jpg';
 
 const imageMap = {
@@ -41,18 +42,26 @@ const News = () => {
   }, []);
 
   return (
-    <div className="news-list-container">
-      <div className="news news-container">
-        {news.map((item, index) => (
-          <NewsItem
-            key={index}
-            photo={item.photo}
-            link={item.link}
-            linkButtonTitle={item.linkButtonTitle}
-          />
-        ))}
+    <>
+      <SEO 
+        title="daste. News - Latest Updates, Releases & Announcements"
+        description="Stay up to date with daste. Latest news, music releases, tour announcements, and band updates."
+        url="https://daste.world/news"
+        keywords="daste news, daste updates, daste announcements, daste new music, daste latest"
+      />
+      <div className="news-list-container">
+        <div className="news news-container">
+          {news.map((item, index) => (
+            <NewsItem
+              key={index}
+              photo={item.photo}
+              link={item.link}
+              linkButtonTitle={item.linkButtonTitle}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

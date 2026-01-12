@@ -4,6 +4,9 @@ import axios from 'axios';
 import './Tour.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TourItem from './TourItem';
+import SEO from '../../components/SEO';
+import { Helmet } from 'react-helmet-async';
+import { getEventsListSchema } from '../../utils/structuredData';
 
 const Spinner = () => (
   <div className="loading-wrap" role="status" aria-live="polite" aria-label="Loading events">
@@ -51,12 +54,26 @@ const Tour = ({ theme }) => {
   }, {});
 
   return (
-    <motion.div
-      className="tour-container"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-    >
+    <>
+      <SEO 
+        title="daste. Tour Dates - Live Shows & Concert Tickets"
+        description="See daste. live! Find upcoming tour dates and concerts across Australia, USA, and Europe. Get tickets for live shows and music events."
+        url="https://daste.world/tour"
+        keywords="daste tour, daste concert, daste tickets, daste live, daste shows, electronic music concerts"
+      />
+      {events.length > 0 && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify(getEventsListSchema(events))}
+          </script>
+        </Helmet>
+      )}
+      <motion.div
+        className="tour-container"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
       {loading ? (
         <Spinner />
       ) : events.length === 0 ? (
@@ -89,6 +106,7 @@ const Tour = ({ theme }) => {
       )}
       <div className="bottom-padding"></div>
     </motion.div>
+    </>
   );
 };
 

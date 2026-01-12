@@ -1,3 +1,23 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://daste.world/sitemap.xml
+
+# Disallow search parameters (if you add search functionality)
+Disallow: /*?*
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+

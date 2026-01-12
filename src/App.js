@@ -23,7 +23,7 @@ function AppWrapper() {
       orange: { bg: '#f05222', link: 'white' },
       white:  { bg: '#dcddde', link: '#f05222' },
       gray:   { bg: '#afb8b6', link: 'black' },
-      blue:   { bg: '#e3e4e5', link: '#3852a5' }, 
+      // blue:   { bg: '#e3e4e5', link: '#3852a5' }, 
     };
 
     const fallback = { bg: '#afb8b6', link: 'black' };

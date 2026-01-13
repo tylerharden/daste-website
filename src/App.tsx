@@ -1,6 +1,6 @@
-// App.js
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import type { ChangeTheme, ThemeName } from './types/theme';
 import AppContent from './AppContent';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -10,24 +10,32 @@ import imageGrey from './assets/daste-atlas-grey.jpg';
 import imageOrange from './assets/daste-atlas-orange.jpg';
 import imageWhite from './assets/daste-atlas-white.jpg';
 
-function AppWrapper() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'white');
-  const headerRef = useRef(null);
-  const footerRef = useRef(null); 
+const DEFAULT_THEME: ThemeName = 'white';
 
-  const changeTheme = (newTheme) => {
+function isThemeName(value: string | null): value is ThemeName {
+  return value === 'orange' || value === 'white' || value === 'gray' || value === 'blue';
+}
+
+function AppWrapper() {
+  const storedTheme = localStorage.getItem('theme');
+  const initialTheme: ThemeName = isThemeName(storedTheme) ? storedTheme : DEFAULT_THEME;
+
+  const [theme, setTheme] = useState<ThemeName>(initialTheme);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const footerRef = useRef<HTMLElement | null>(null);
+
+  const changeTheme: ChangeTheme = (newTheme) => {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
 
-    const themeMap = {
+    const themeMap: Record<ThemeName, { bg: string; link: string }> = {
       orange: { bg: '#f05222', link: 'white' },
-      white:  { bg: '#dcddde', link: '#f05222' },
-      gray:   { bg: '#afb8b6', link: 'black' },
-      // blue:   { bg: '#e3e4e5', link: '#3852a5' }, 
+      white: { bg: '#dcddde', link: '#f05222' },
+      gray: { bg: '#afb8b6', link: 'black' },
+      blue: { bg: '#e3e4e5', link: '#3852a5' },
     };
 
-    const fallback = { bg: '#afb8b6', link: 'black' };
-    const { bg: bgColor, link: linkColor } = themeMap[newTheme] || fallback;
+    const { bg: bgColor, link: linkColor } = themeMap[newTheme];
 
     document.documentElement.style.setProperty('--background-color', bgColor);
     document.documentElement.style.setProperty('--link-color', linkColor);
@@ -35,7 +43,7 @@ function AppWrapper() {
     document.body.classList.remove('orange-theme', 'white-theme', 'gray-theme', 'blue-theme');
     document.body.classList.add(`${newTheme}-theme`);
 
-    let themeColorMetaTag = document.querySelector('meta[name="theme-color"]');
+    let themeColorMetaTag = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
     if (!themeColorMetaTag) {
       themeColorMetaTag = document.createElement('meta');
       themeColorMetaTag.name = 'theme-color';
@@ -45,7 +53,7 @@ function AppWrapper() {
   };
 
   useEffect(() => {
-    const preloadImages = (imageUrls) => {
+    const preloadImages = (imageUrls: string[]) => {
       imageUrls.forEach((url) => {
         const img = new Image();
         img.src = url;
@@ -55,15 +63,15 @@ function AppWrapper() {
     preloadImages([imageGrey, imageOrange, imageWhite]);
 
     const updateHeaderHeight = () => {
-      const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 60;
+      const headerHeight = headerRef.current?.offsetHeight ?? 60;
       document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
       document.documentElement.style.setProperty('--main-padding-top', `${headerHeight}px`);
     };
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const maxScroll = 200; 
-      const blurValue = Math.min(scrollTop / maxScroll, 1) * 10; 
+      const maxScroll = 200;
+      const blurValue = Math.min(scrollTop / maxScroll, 1) * 10;
 
       if (headerRef.current) {
         headerRef.current.style.backdropFilter = `blur(${blurValue}px)`;
@@ -86,7 +94,7 @@ function AppWrapper() {
   }, []);
 
   useEffect(() => {
-    changeTheme(theme); 
+    changeTheme(theme);
   }, [theme]);
 
   useEffect(() => {
@@ -94,25 +102,26 @@ function AppWrapper() {
       if (footerRef.current) {
         document.documentElement.style.setProperty(
           '--footer-height',
-          `${footerRef.current.offsetHeight}px`
+          `${footerRef.current.offsetHeight}px`,
         );
       }
     }
+
     updateFooterPadding();
     window.addEventListener('resize', updateFooterPadding);
     return () => window.removeEventListener('resize', updateFooterPadding);
-  }, [theme]); 
+  }, [theme]);
 
   return (
     <div className="App">
       <div className="content-wrapper">
-        <Header theme={theme} ref={headerRef} />
+        <Header theme={theme} changeTheme={changeTheme} ref={headerRef} />
         <div className="container">
           <main className="main-content">
             <AppContent theme={theme} changeTheme={changeTheme} />
           </main>
         </div>
-        <Footer changeTheme={changeTheme} sticky={true} ref={footerRef} />
+        <Footer changeTheme={changeTheme} sticky ref={footerRef} />
       </div>
     </div>
   );

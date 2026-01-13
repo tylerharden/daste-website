@@ -6,29 +6,36 @@ import './redirect.css';
 
 function Redirect() {
   const [searchParams] = useSearchParams();
+
   const baseUrl = searchParams.get('url');
   const campaign = searchParams.get('campaign');
   const source = searchParams.get('source') || 'meta';
   const medium = 'paid_social';
 
   const finalUrl = baseUrl
-    ? `${baseUrl}?utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}`
+    ? `${baseUrl}?utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign ?? ''}`
     : null;
 
   useEffect(() => {
-    if (finalUrl) {
-      if (fbq) {
-        fbq('track', 'Tickets Link');
-      }
+    if (!finalUrl) return;
 
-      setTimeout(() => {
-        window.location.href = finalUrl;
-      }, 1000);
+    if (fbq) {
+      fbq('track', 'Tickets Link');
     }
-  }, [finalUrl, campaign, source]); 
+
+    const timer = window.setTimeout(() => {
+      window.location.href = finalUrl;
+    }, 1000);
+
+    return () => window.clearTimeout(timer);
+  }, [finalUrl]);
 
   if (!finalUrl) {
-    return <div className="redirect-container"><p>Missing redirect URL.</p></div>;
+    return (
+      <div className="redirect-container">
+        <p>Missing redirect URL.</p>
+      </div>
+    );
   }
 
   return (
@@ -36,7 +43,7 @@ function Redirect() {
       className="redirect-container"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <motion.h1
         className="redirect-title"

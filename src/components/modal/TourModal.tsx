@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 import './TourModal.css';
-import tourPoster from '../assets/1.daste-World-Poster-NoLogo.jpg'; 
+import tourPoster from '../../assets/1.daste-World-Poster-NoLogo.jpg';
 
-const TourModal = ({ onClose }) => {
+type TourModalProps = {
+  onClose: () => void;
+};
+
+const TourModal = ({ onClose }: TourModalProps) => {
   useEffect(() => {
     document.body.classList.add('blurred');
 
@@ -14,9 +18,16 @@ const TourModal = ({ onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button onClick={onClose} className="close-button">x</button>
+        <button onClick={onClose} className="close-button">
+          x
+        </button>
         <img src={tourPoster} alt="Atlas Tour" className="tour-poster" />
-        <a href="https://ticket-link.com" target="_blank" rel="noopener noreferrer" className="ticket-link">
+        <a
+          href="https://ticket-link.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ticket-link"
+        >
           Atlas Tour
         </a>
       </div>

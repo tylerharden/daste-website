@@ -1,7 +1,12 @@
 import React from 'react';
+import type { ChangeTheme } from '../../types/theme';
 import './ThemeSelector.css';
 
-const ThemeSelector = ({ changeTheme }) => {
+type ThemeSelectorProps = {
+  changeTheme: ChangeTheme;
+};
+
+const ThemeSelector = ({ changeTheme }: ThemeSelectorProps) => {
   return (
     <div className="theme-buttons">
       <button className="theme-button orange" onClick={() => changeTheme('orange')}></button>
@@ -10,5 +15,6 @@ const ThemeSelector = ({ changeTheme }) => {
       {/* <button className="theme-button blue" onClick={() => changeTheme('blue')}></button> */}
     </div>
   );
-}
+};
+
 export default ThemeSelector;

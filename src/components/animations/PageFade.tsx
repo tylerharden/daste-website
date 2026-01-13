@@ -1,8 +1,12 @@
-// src/components/PageFade.js
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PageFade = ({ children, keyProp }) => (
+type PageFadeProps = {
+  children: React.ReactNode;
+  keyProp: string;
+};
+
+const PageFade = ({ children, keyProp }: PageFadeProps) => (
   <motion.div
     key={keyProp}
     initial={{ opacity: 0 }}

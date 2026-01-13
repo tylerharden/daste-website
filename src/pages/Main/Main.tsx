@@ -5,22 +5,28 @@ import imageOrange from '../../assets/daste-atlas-orange.jpg';
 import imageWhite from '../../assets/daste-atlas-white.jpg';
 import imageBlue from '../../assets/dasteWORLD_Press_5305_halftone Large.jpeg';
 import { motion } from 'framer-motion';
-import SEO from '../../components/SEO';
 import { Helmet } from 'react-helmet-async';
+import type { ChangeTheme, ThemeName } from '../../types/theme';
+import SEO from '../../components/SEO';
 import { getMusicGroupSchema, getWebsiteSchema } from '../../utils/structuredData';
 
-const Main = ({ theme, changeTheme }) => {
-  const mainRef = useRef(null);
+type MainProps = {
+  theme: ThemeName;
+  changeTheme: ChangeTheme;
+};
 
-  const getImageSrc = (theme) => {
-    switch (theme) {
+const Main = ({ theme }: MainProps) => {
+  const mainRef = useRef<HTMLElement | null>(null);
+
+  const getImageSrc = (currentTheme: ThemeName) => {
+    switch (currentTheme) {
       case 'blue':
         return imageBlue;
       case 'orange':
         return imageOrange;
       case 'white':
         return imageWhite;
-      case 'grey':
+      case 'gray':
       default:
         return imageGrey;
     }
@@ -28,19 +34,15 @@ const Main = ({ theme, changeTheme }) => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="daste. - Australian Electronic Music Band | Official Site"
         description="Official website of daste. - Australian electronic music band. Stream our latest album dasteWORLD on Spotify and Apple Music. Find tour dates, tickets and merch."
         url="https://daste.world/"
         keywords="daste, electronic music, Australian band, dasteWORLD, live music, electronic band Australia, indie electronic"
       />
       <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(getMusicGroupSchema())}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(getWebsiteSchema())}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(getMusicGroupSchema())}</script>
+        <script type="application/ld+json">{JSON.stringify(getWebsiteSchema())}</script>
       </Helmet>
       <motion.main
         className={`main ${theme}`}
@@ -49,27 +51,22 @@ const Main = ({ theme, changeTheme }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
       >
-      <div className='sections'>
-        <section className="section image">
-          <motion.img
-            src={getImageSrc(theme)}
-            href={'/tour'}
-            alt="daste. band"
-            id="band-image"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: 'easeOut' }}
-          />
-          <div className="main-button">
-            {/* <a href={'/tour'} target="_blank" rel="noopener noreferrer" className="main-link">
-              Atlas Tour
-            </a> */}
-          </div>
-        </section>
-      </div>
-    </motion.main>
+        <div className="sections">
+          <section className="section image">
+            <motion.img
+              src={getImageSrc(theme)}
+              alt="daste. band"
+              id="band-image"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: 'easeOut' }}
+            />
+            <div className="main-button"></div>
+          </section>
+        </div>
+      </motion.main>
     </>
   );
-}
+};
 
 export default Main;

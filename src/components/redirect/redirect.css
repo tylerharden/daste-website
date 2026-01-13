@@ -12,8 +12,6 @@
   font-size: 3rem;
   margin-bottom: 1rem;
   font-family: 'HelveticaBold', Arial, sans-serif;
-
-  
 }
 
 .redirect-subtitle {
@@ -25,13 +23,12 @@
   padding: 1rem 2rem;
   font-size: 1.25rem;
   background-color: var(--button-color);
-    color: var(--button-text-color);
+  color: var(--button-text-color);
 
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-    font-family: 'Favorit', Arial, sans-serif;
-
+  font-family: 'Favorit', Arial, sans-serif;
 }
 .redirect-button:hover {
   background-color: #2b2a2a;

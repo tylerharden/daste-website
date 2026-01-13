@@ -1,29 +1,29 @@
 [
-    {
-        "photo": "image1",
-        "title": "Atlas Tour",
-        "description": "So excited to be touring again. Get tickets below!",
-        "link": "/tour",
-        "selectedToDisplay": true,
-        "orderInt": 0,
-        "linkButtonTitle": "Atlas Tour"
-    },
-    {
-        "photo": "https://assets-au-01.kc-usercontent.com/a74cc67d-6861-022b-4d6d-57679e9d331f/c2d4984e-d334-43c0-ae60-c5c800bed65d/Around_artwork_copy.jpg?width=300",
-        "title": "OUT NOW",
-        "description": "So excited to be back with our new release, Around!",
-        "link": "https://i0.wp.com/www.faetonmusic.com/wp-content/uploads/2019/11/daste.-artist-faeton-music.jpg?fit=500%2C500&ssl=1",
-        "selectedToDisplay": false,
-        "orderInt": 1,
-        "linkButtonTitle": "Listen now"
-    },
-    {
-        "photo": "link_to_photo_3.jpg",
-        "title": "News Title 3",
-        "description": "This is the description for news 3.",
-        "link": "https://example.com/news3",
-        "selectedToDisplay": false,
-        "orderInt": 2,
-        "linkButtonTitle": "Discover more"
-    }
+  {
+    "photo": "image1",
+    "title": "Atlas Tour",
+    "description": "So excited to be touring again. Get tickets below!",
+    "link": "/tour",
+    "selectedToDisplay": true,
+    "orderInt": 0,
+    "linkButtonTitle": "Atlas Tour"
+  },
+  {
+    "photo": "https://assets-au-01.kc-usercontent.com/a74cc67d-6861-022b-4d6d-57679e9d331f/c2d4984e-d334-43c0-ae60-c5c800bed65d/Around_artwork_copy.jpg?width=300",
+    "title": "OUT NOW",
+    "description": "So excited to be back with our new release, Around!",
+    "link": "https://i0.wp.com/www.faetonmusic.com/wp-content/uploads/2019/11/daste.-artist-faeton-music.jpg?fit=500%2C500&ssl=1",
+    "selectedToDisplay": false,
+    "orderInt": 1,
+    "linkButtonTitle": "Listen now"
+  },
+  {
+    "photo": "link_to_photo_3.jpg",
+    "title": "News Title 3",
+    "description": "This is the description for news 3.",
+    "link": "https://example.com/news3",
+    "selectedToDisplay": false,
+    "orderInt": 2,
+    "linkButtonTitle": "Discover more"
+  }
 ]

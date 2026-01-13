@@ -1,7 +1,7 @@
 /* Music.css */
 
-
-.music h1, .music h2 {
+.music h1,
+.music h2 {
   text-align: center;
 }
 
@@ -16,7 +16,6 @@
 .music-container {
   padding: 20px;
   /* height: calc(100vh - var(--header-height) - var(--footer-height)); */
-
 }
 
 .media-grid {

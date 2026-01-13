@@ -1,32 +1,30 @@
 :root {
   --text-color: black;
   --button-color: #f05222;
-  --button-text-color: white; 
+  --button-text-color: white;
   --border-color: #ddd;
 }
-
 
 body.orange-theme {
   --text-color: white;
   --button-color: #dcddde;
-  --button-text-color: #f05222; 
+  --button-text-color: #f05222;
   --border-color: #ddd;
 }
 
 body.white-theme {
   --text-color: #f05222;
   --button-color: #f05222;
-  --button-text-color: white; 
+  --button-text-color: white;
   --border-color: #f05222;
 }
 
 body.gray-theme {
   --text-color: black;
   --button-color: #f05222;
-  --button-text-color: black; 
+  --button-text-color: black;
   --border-color: grey;
 }
-
 
 .news-item {
   display: flex;
@@ -37,17 +35,15 @@ body.gray-theme {
   box-sizing: border-box;
   margin-bottom: 140px;
   overflow: hidden;
-  
 }
 
 .news-photo-container {
   flex: 1;
-  padding: 5%; 
+  padding: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
   /* height: 80vh; */
-
 }
 
 .news-photo {
@@ -55,7 +51,6 @@ body.gray-theme {
   object-fit: contain; /* Ensure the image is fully visible */
   /* border: 1px solid #dcddde; */
   cursor: pointer;
-  
 }
 
 .news-content {

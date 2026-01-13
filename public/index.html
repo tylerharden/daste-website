@@ -1,66 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    
+
     <!-- Hotjar Tracking Code for https://daste.world -->
     <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:6371993,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 6371993, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script');
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
-        <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code -->
     <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1400671367597281');
       fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1400671367597281&ev=PageView&noscript=1"
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1400671367597281&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-     
+
     <meta
       name="description"
       content="Official website of daste. - Australian electronic music band. Stream our music on Spotify and Apple Music, find tour dates, buy tickets and merch."
     />
-    <meta name="keywords" content="daste, electronic music, Australian band, live music, tour dates, concert tickets" />
+    <meta
+      name="keywords"
+      content="daste, electronic music, Australian band, live music, tour dates, concert tickets"
+    />
     <meta name="author" content="daste." />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://daste.world/" />
     <meta property="og:title" content="daste. - Australian Electronic Music Band" />
-    <meta property="og:description" content="Official website of daste. Stream our music, find tour dates, buy tickets and merch." />
+    <meta
+      property="og:description"
+      content="Official website of daste. Stream our music, find tour dates, buy tickets and merch."
+    />
     <meta property="og:image" content="https://daste.world/images/daste-social-share.jpg" />
     <meta property="og:site_name" content="daste." />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://daste.world/" />
     <meta name="twitter:title" content="daste. - Australian Electronic Music Band" />
-    <meta name="twitter:description" content="Official website of daste. Stream our music, find tour dates, buy tickets and merch." />
+    <meta
+      name="twitter:description"
+      content="Official website of daste. Stream our music, find tour dates, buy tickets and merch."
+    />
     <meta name="twitter:image" content="https://daste.world/images/daste-social-share.jpg" />
     <meta name="twitter:site" content="@dastemusic" />
-    
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMGx6Bd80ZDsQG8FuyJHg3G2K4BgHzGekB3yR/4" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMGx6Bd80ZDsQG8FuyJHg3G2K4BgHzGekB3yR/4"
+      crossorigin="anonymous"
+    />
     <title>daste.world</title>
   </head>
   <body>

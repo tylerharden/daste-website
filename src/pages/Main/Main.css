@@ -1,28 +1,28 @@
 :root {
   --text-color: black;
   --button-color: #f05222;
-  --button-text-color: white; 
+  --button-text-color: white;
   --border-color: #ddd;
 }
 
 body.orange-theme {
   --text-color: white;
   --button-color: #ddd;
-  --button-text-color: #f05222; 
+  --button-text-color: #f05222;
   --border-color: #ddd;
 }
 
 body.white-theme {
   --text-color: #f05222;
   --button-color: #f05222;
-  --button-text-color: white; 
+  --button-text-color: white;
   --border-color: #f05222;
 }
 
 body.gray-theme {
   --text-color: black;
   --button-color: #f05222;
-  --button-text-color: black; 
+  --button-text-color: black;
   --border-color: grey;
 }
 
@@ -69,7 +69,7 @@ body.blue-theme {
   justify-content: center;
 } */
 
-.main-button { 
+.main-button {
   position: absolute;
   top: 50%;
   left: 50%;

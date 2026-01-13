@@ -3,10 +3,11 @@
 @font-face {
   font-family: 'Helvetica73-Extended';
   src: url('../../fonts/Helvetica73-ExtendedBold.eot');
-  src: url('../../fonts/Helvetica73-ExtendedBold.eot?#iefix') format('embedded-opentype'),
-      url('../../fonts/Helvetica73-ExtendedBold.woff2') format('woff2'),
-      url('../../fonts/Helvetica73-ExtendedBold.woff') format('woff'),
-      url('../../fonts/Helvetica73-ExtendedBold.ttf') format('truetype');
+  src:
+    url('../../fonts/Helvetica73-ExtendedBold.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/Helvetica73-ExtendedBold.woff2') format('woff2'),
+    url('../../fonts/Helvetica73-ExtendedBold.woff') format('woff'),
+    url('../../fonts/Helvetica73-ExtendedBold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -15,10 +16,11 @@
 @font-face {
   font-family: 'Favorit';
   src: url('../../fonts/Favorit-Medium.eot');
-  src: url('../../fonts/Favorit-Medium.eot?#iefix') format('embedded-opentype'),
-      url('../../fonts/Favorit-Medium.woff2') format('woff2'),
-      url('../../fonts/Favorit-Medium.woff') format('woff'),
-      url('../../fonts/Favorit-Medium.ttf') format('truetype');
+  src:
+    url('../../fonts/Favorit-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/Favorit-Medium.woff2') format('woff2'),
+    url('../../fonts/Favorit-Medium.woff') format('woff'),
+    url('../../fonts/Favorit-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -36,7 +38,7 @@
 }
 
 .header-container {
-  width: 100%; 
+  width: 100%;
   margin: 0 auto;
   /* padding: 0 1rem; */
   box-sizing: border-box;
@@ -69,7 +71,7 @@
 
   #logo-image {
     margin-bottom: 0px;
-  }  
+  }
 }
 
 @media (max-width: 768px) {

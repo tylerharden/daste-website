@@ -5,28 +5,32 @@
   --border-color: #ddd;
 }
 
-body.orange-theme {
+body.orange-theme,
+html.orange-theme {
   --text-color: white;
   --button-color: #ddd;
   --button-text-color: #f05222;
   --border-color: #ddd;
 }
 
-body.white-theme {
+body.white-theme,
+html.white-theme {
   --text-color: #f05222;
   --button-color: #f05222;
   --button-text-color: white;
   --border-color: #f05222;
 }
 
-body.gray-theme {
+body.gray-theme,
+html.gray-theme {
   --text-color: black;
   --button-color: #f05222;
   --button-text-color: black;
   --border-color: grey;
 }
 
-body.blue-theme {
+body.blue-theme,
+html.blue-theme {
   --text-color: #3852a5;
   --button-color: #3852a5;
   --button-text-color: #e3e4e5;

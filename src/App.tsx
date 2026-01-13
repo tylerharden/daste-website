@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import type { ChangeTheme, ThemeName } from './types/theme';
 import AppContent from './AppContent';
@@ -12,44 +12,55 @@ import imageWhite from './assets/daste-atlas-white.jpg';
 
 const DEFAULT_THEME: ThemeName = 'white';
 
+const THEME_MAP: Record<ThemeName, { bg: string; link: string }> = {
+  orange: { bg: '#f05222', link: 'white' },
+  white: { bg: '#dcddde', link: '#f05222' },
+  gray: { bg: '#afb8b6', link: 'black' },
+  blue: { bg: '#e3e4e5', link: '#3852a5' },
+};
+
 function isThemeName(value: string | null): value is ThemeName {
   return value === 'orange' || value === 'white' || value === 'gray' || value === 'blue';
 }
 
-function AppWrapper() {
-  const storedTheme = localStorage.getItem('theme');
-  const initialTheme: ThemeName = isThemeName(storedTheme) ? storedTheme : DEFAULT_THEME;
+function applyThemeToDom(theme: ThemeName) {
+  const { bg: bgColor, link: linkColor } = THEME_MAP[theme];
 
-  const [theme, setTheme] = useState<ThemeName>(initialTheme);
+  document.documentElement.style.setProperty('--background-color', bgColor);
+  document.documentElement.style.setProperty('--link-color', linkColor);
+
+  document.documentElement.classList.remove(
+    'orange-theme',
+    'white-theme',
+    'gray-theme',
+    'blue-theme',
+  );
+  document.documentElement.classList.add(`${theme}-theme`);
+
+  document.body.classList.remove('orange-theme', 'white-theme', 'gray-theme', 'blue-theme');
+  document.body.classList.add(`${theme}-theme`);
+
+  let themeColorMetaTag = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+  if (!themeColorMetaTag) {
+    themeColorMetaTag = document.createElement('meta');
+    themeColorMetaTag.name = 'theme-color';
+    document.head.appendChild(themeColorMetaTag);
+  }
+  themeColorMetaTag.setAttribute('content', bgColor);
+}
+
+function AppWrapper() {
+  const [theme, setTheme] = useState<ThemeName>(() => {
+    const storedTheme = localStorage.getItem('theme');
+    return isThemeName(storedTheme) ? storedTheme : DEFAULT_THEME;
+  });
+
   const headerRef = useRef<HTMLElement | null>(null);
   const footerRef = useRef<HTMLElement | null>(null);
 
   const changeTheme: ChangeTheme = (newTheme) => {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
-
-    const themeMap: Record<ThemeName, { bg: string; link: string }> = {
-      orange: { bg: '#f05222', link: 'white' },
-      white: { bg: '#dcddde', link: '#f05222' },
-      gray: { bg: '#afb8b6', link: 'black' },
-      blue: { bg: '#e3e4e5', link: '#3852a5' },
-    };
-
-    const { bg: bgColor, link: linkColor } = themeMap[newTheme];
-
-    document.documentElement.style.setProperty('--background-color', bgColor);
-    document.documentElement.style.setProperty('--link-color', linkColor);
-
-    document.body.classList.remove('orange-theme', 'white-theme', 'gray-theme', 'blue-theme');
-    document.body.classList.add(`${newTheme}-theme`);
-
-    let themeColorMetaTag = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
-    if (!themeColorMetaTag) {
-      themeColorMetaTag = document.createElement('meta');
-      themeColorMetaTag.name = 'theme-color';
-      document.head.appendChild(themeColorMetaTag);
-    }
-    themeColorMetaTag.setAttribute('content', bgColor);
   };
 
   useEffect(() => {
@@ -93,8 +104,9 @@ function AppWrapper() {
     };
   }, []);
 
-  useEffect(() => {
-    changeTheme(theme);
+  // Apply theme before paint to prevent a flash of default styles.
+  useLayoutEffect(() => {
+    applyThemeToDom(theme);
   }, [theme]);
 
   useEffect(() => {
